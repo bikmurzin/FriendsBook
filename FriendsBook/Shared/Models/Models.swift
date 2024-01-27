@@ -21,11 +21,10 @@ struct UserModel: Equatable, Decodable {
     let registered: String
     let latitude: Double
     let longitude: Double
-    let tags: [String]
-    let friends: [String: Int]
+    let friends: [Friend]
     let favoriteFruit: String
     
-    init(id: Int, guid: String, balance: String, age: Int, eyeColor: String, name: String, gender: String, company: String, email: String, phone: String, address: String, about: String, registered: String, latitude: Double, longitude: Double, tags: [String], friends: [String : Int], favoriteFruit: String) {
+    init(id: Int, guid: String, balance: String, age: Int, eyeColor: String, name: String, gender: String, company: String, email: String, phone: String, address: String, about: String, registered: String, latitude: Double, longitude: Double, friends: [Friend], favoriteFruit: String) {
         self.id = id
         self.guid = guid
         self.balance = balance
@@ -41,7 +40,6 @@ struct UserModel: Equatable, Decodable {
         self.registered = registered
         self.latitude = latitude
         self.longitude = longitude
-        self.tags = tags
         self.friends = friends
         self.favoriteFruit = favoriteFruit
     }
@@ -62,8 +60,13 @@ struct UserModel: Equatable, Decodable {
         self.registered = userDBModel.registered
         self.latitude = userDBModel.latitude
         self.longitude = userDBModel.longitude
-        self.tags = userDBModel.tags
-        self.friends = userDBModel.friends
+        self.friends = userDBModel.friends.map({ friend in
+            Friend(id: friend.id)
+        })
         self.favoriteFruit = userDBModel.favoriteFruit
+    }
+    
+    struct Friend: Equatable, Decodable {
+        let id: Int
     }
 }

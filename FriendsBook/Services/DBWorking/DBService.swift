@@ -17,13 +17,13 @@ protocol IDataBaseService {
 }
 
 final class DataBaseService {
-    private let realm = try? Realm()
+
 }
 
 // MARK: - IRealmManager
 extension DataBaseService: IDataBaseService {
     func saveDataToDB(models: [UserModel]) {
-        guard let realm = realm else { return }
+        guard let realm = try? Realm() else { return }
         let dbObjects = models.map { model in
             UserDBModel(dataModel: model)
         }
@@ -40,7 +40,7 @@ extension DataBaseService: IDataBaseService {
     }
     
     func loadDataFromDB() -> [UserModel] {
-        guard let realm = realm else { return [] }
+        guard let realm = try? Realm() else { return [] }
         let dbItems = realm.objects(UserDBModel.self)
         let UserModels: [UserModel] = dbItems.map { result in
             return UserModel(userDBModel: result)
@@ -49,7 +49,7 @@ extension DataBaseService: IDataBaseService {
     }
     
     func deleteDataFromDB() {
-        guard let realm = realm else { return }
+        guard let realm = try? Realm() else { return }
         do {
             try realm.write {
                 realm.deleteAll()
@@ -60,7 +60,7 @@ extension DataBaseService: IDataBaseService {
     }
     
     func isObjectExists(userId: Int) -> Bool {
-        guard let realm = realm else { return false }
+        guard let realm = try? Realm() else { return false }
         var isObjectExists = false
         do {
             try realm.write {
@@ -76,7 +76,7 @@ extension DataBaseService: IDataBaseService {
     }
     
     func isDBEmpty() -> Bool {
-        guard let realm = realm else { return false }
+        guard let realm = try? Realm() else { return true }
         return realm.isEmpty
     }
 }
