@@ -8,19 +8,19 @@
 import Foundation
 import RealmSwift
 
-protocol IRealmManager {
+protocol IDataBaseService {
     func saveDataToDB(model: UserModel)
     func loadDataFromDB() -> [UserModel]
     func deleteDataFromDB()
     func isObjectExists(userId: Int) -> Bool
 }
 
-final class RealmManager {
+final class DataBaseService {
     private let realm = try? Realm()
 }
 
 // MARK: - IRealmManager
-extension RealmManager: IRealmManager {
+extension DataBaseService: IDataBaseService {
     func saveDataToDB(model: UserModel) {
         guard let realm = realm else { return }
         let dbObject = UserDBModel(dataModel: model)

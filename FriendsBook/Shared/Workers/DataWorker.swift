@@ -5,4 +5,22 @@
 //  Date: 27.01.2024
 //
 
-import Foundation
+protocol IDataWorker {
+    func loadAndUpdateUserData()
+    func loadUserDataAndUpdateIfNeeded()
+}
+
+final class DataWorker {
+    let networkService = NetworkService()
+    let dbService = DataBaseService()
+}
+
+extension DataWorker: IDataWorker {
+    func loadAndUpdateUserData() {
+        
+    }
+    
+    func loadUserDataAndUpdateIfNeeded() {
+        
+    }
+}
