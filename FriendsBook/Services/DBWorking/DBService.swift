@@ -9,10 +9,11 @@ import Foundation
 import RealmSwift
 
 protocol IDataBaseService {
-    func saveDataToDB(model: UserModel)
+    func saveDataToDB(models: [UserModel])
     func loadDataFromDB() -> [UserModel]
     func deleteDataFromDB()
     func isObjectExists(userId: Int) -> Bool
+    func isDBEmpty() -> Bool
 }
 
 final class DataBaseService {
@@ -21,16 +22,20 @@ final class DataBaseService {
 
 // MARK: - IRealmManager
 extension DataBaseService: IDataBaseService {
-    func saveDataToDB(model: UserModel) {
+    func saveDataToDB(models: [UserModel]) {
         guard let realm = realm else { return }
-        let dbObject = UserDBModel(dataModel: model)
-        do {
-            try realm.write({
-                realm.add(dbObject)
-                print(Realm.Configuration.defaultConfiguration.fileURL!)
-            })
-        } catch let error as NSError {
-            print("Something went wrong: \(error)")
+        let dbObjects = models.map { model in
+            UserDBModel(dataModel: model)
+        }
+        for dbObject in dbObjects {
+            do {
+                try realm.write({
+                    realm.add(dbObject)
+                    print(Realm.Configuration.defaultConfiguration.fileURL!)
+                })
+            } catch let error as NSError {
+                print("Something went wrong: \(error)")
+            }
         }
     }
     
@@ -68,5 +73,10 @@ extension DataBaseService: IDataBaseService {
             print("Ошибка при поиске объекта: \(error)")
         }
         return isObjectExists
+    }
+    
+    func isDBEmpty() -> Bool {
+        guard let realm = realm else { return false }
+        return realm.isEmpty
     }
 }
