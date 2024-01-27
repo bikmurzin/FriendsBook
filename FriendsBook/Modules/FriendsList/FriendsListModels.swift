@@ -10,5 +10,10 @@ enum FriendsListModels {
         let userId: Int?
     }
     struct Response: Equatable { }
-    struct ViewModel: Equatable { }
+    struct ViewModel: Equatable {
+        let id: Int
+        let name: String
+        let email: String
+        let isActive: Bool
+    }
 }

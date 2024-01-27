@@ -23,13 +23,17 @@
 		70EC38AF2B6446AB004BA618 /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38AE2B6446AB004BA618 /* UserDetailsPresenter.swift */; };
 		70EC38B12B6446B6004BA618 /* UserDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38B02B6446B6004BA618 /* UserDetailsInteractor.swift */; };
 		70EC38B32B6446BD004BA618 /* UserDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38B22B6446BD004BA618 /* UserDetailsBuilder.swift */; };
+		70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38B72B645A91004BA618 /* NetworkService.swift */; };
 		70EC38BA2B645B6A004BA618 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38B92B645B6A004BA618 /* DBService.swift */; };
 		70EC38BD2B645BAB004BA618 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38BC2B645BAB004BA618 /* Realm */; };
 		70EC38BF2B645BAB004BA618 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38BE2B645BAB004BA618 /* RealmSwift */; };
 		70EC38C12B64C8FC004BA618 /* DBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C02B64C8FC004BA618 /* DBModels.swift */; };
 		70EC38C42B64CB93004BA618 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C32B64CB93004BA618 /* Models.swift */; };
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
-		70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38B72B645A91004BA618 /* NetworkService.swift */; };
+		70EC38C92B656858004BA618 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C82B656858004BA618 /* FriendListView.swift */; };
+		70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CB2B656C2A004BA618 /* SnapKit */; };
+		70EC38CE2B656C2A004BA618 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */; };
+		70EC38D12B656CC4004BA618 /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D02B656CC4004BA618 /* FriendListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,11 +55,13 @@
 		70EC38AE2B6446AB004BA618 /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
 		70EC38B02B6446B6004BA618 /* UserDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsInteractor.swift; sourceTree = "<group>"; };
 		70EC38B22B6446BD004BA618 /* UserDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsBuilder.swift; sourceTree = "<group>"; };
+		70EC38B72B645A91004BA618 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		70EC38B92B645B6A004BA618 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		70EC38C02B64C8FC004BA618 /* DBModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModels.swift; sourceTree = "<group>"; };
 		70EC38C32B64CB93004BA618 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		70EC38C62B64ECB6004BA618 /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
-		70EC38B72B645A91004BA618 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		70EC38C82B656858004BA618 /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		70EC38D02B656CC4004BA618 /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +69,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */,
 				70EC38BF2B645BAB004BA618 /* RealmSwift in Frameworks */,
 				70EC38BD2B645BAB004BA618 /* Realm in Frameworks */,
+				70EC38CE2B656C2A004BA618 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +157,7 @@
 		70EC389A2B6445C9004BA618 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
+				70EC38CF2B656C95004BA618 /* FriendListView */,
 				70EC389B2B6445C9004BA618 /* FriendsListBuilder.swift */,
 				70EC389C2B6445C9004BA618 /* FriendsListInteractor.swift */,
 				70EC389D2B6445C9004BA618 /* FriendsListPresenter.swift */,
@@ -212,6 +221,15 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
+		70EC38CF2B656C95004BA618 /* FriendListView */ = {
+			isa = PBXGroup;
+			children = (
+				70EC38C82B656858004BA618 /* FriendListView.swift */,
+				70EC38D02B656CC4004BA618 /* FriendListTableViewCell.swift */,
+			);
+			path = FriendListView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,6 +249,8 @@
 			packageProductDependencies = (
 				70EC38BC2B645BAB004BA618 /* Realm */,
 				70EC38BE2B645BAB004BA618 /* RealmSwift */,
+				70EC38CB2B656C2A004BA618 /* SnapKit */,
+				70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */,
 			);
 			productName = FriendsBook;
 			productReference = 70EC387E2B6444C3004BA618 /* FriendsBook.app */;
@@ -262,6 +282,7 @@
 			mainGroup = 70EC38752B6444C3004BA618;
 			packageReferences = (
 				70EC38BB2B645BAB004BA618 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 70EC387F2B6444C3004BA618 /* Products */;
 			projectDirPath = "";
@@ -303,7 +324,9 @@
 				70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */,
 				70EC38A42B6445C9004BA618 /* FriendsListViewController.swift in Sources */,
 				70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */,
+				70EC38C92B656858004BA618 /* FriendListView.swift in Sources */,
 				70EC38AD2B6446A5004BA618 /* UserDetailsViewController.swift in Sources */,
+				70EC38D12B656CC4004BA618 /* FriendListTableViewCell.swift in Sources */,
 				70EC38BA2B645B6A004BA618 /* DBService.swift in Sources */,
 				70EC38A12B6445C9004BA618 /* FriendsListBuilder.swift in Sources */,
 				70EC38AF2B6446AB004BA618 /* UserDetailsPresenter.swift in Sources */,
@@ -532,6 +555,14 @@
 				kind = branch;
 			};
 		};
+		70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -544,6 +575,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70EC38BB2B645BAB004BA618 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		70EC38CB2B656C2A004BA618 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
