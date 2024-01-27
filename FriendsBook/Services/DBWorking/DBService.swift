@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-protocol IRealmManager {
+protocol IDataBaseService {
     func saveDataToDB(models: [UserModel])
     func loadDataFromDB() -> [UserModel]
     func deleteDataFromDB()
@@ -16,12 +16,12 @@ protocol IRealmManager {
     func isDBEmpty() -> Bool
 }
 
-final class RealmManager {
+final class DataBaseService {
     private let realm = try? Realm()
 }
 
 // MARK: - IRealmManager
-extension RealmManager: IRealmManager {
+extension DataBaseService: IDataBaseService {
     func saveDataToDB(models: [UserModel]) {
         guard let realm = realm else { return }
         let dbObjects = models.map { model in
