@@ -29,6 +29,7 @@
 		70EC38C12B64C8FC004BA618 /* DBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C02B64C8FC004BA618 /* DBModels.swift */; };
 		70EC38C42B64CB93004BA618 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C32B64CB93004BA618 /* Models.swift */; };
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
+		70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38B72B645A91004BA618 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		70EC38C02B64C8FC004BA618 /* DBModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModels.swift; sourceTree = "<group>"; };
 		70EC38C32B64CB93004BA618 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		70EC38C62B64ECB6004BA618 /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
+		70EC38B72B645A91004BA618 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		70EC38B52B645763004BA618 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				70EC38B72B645A91004BA618 /* NetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				70EC38A92B644694004BA618 /* UserDetailsRouter.swift in Sources */,
 				70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */,
 				70EC38A42B6445C9004BA618 /* FriendsListViewController.swift in Sources */,
+				70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */,
 				70EC38AD2B6446A5004BA618 /* UserDetailsViewController.swift in Sources */,
 				70EC38BA2B645B6A004BA618 /* DBService.swift in Sources */,
 				70EC38A12B6445C9004BA618 /* FriendsListBuilder.swift in Sources */,
