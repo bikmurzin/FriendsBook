@@ -10,6 +10,7 @@ import Foundation
 protocol FriendsListBusinessLogic: AnyObject {
     func loadData(request: FriendsListModels.Request)
     func refreshData(request: FriendsListModels.Request)
+    func loadNextScreenData(request: FriendsListNextScreenModels.Request)
 }
 
 final class FriendsListInteractor {
@@ -32,6 +33,11 @@ final class FriendsListInteractor {
             }
         })
         return userFriends
+    }
+    
+    private func isUserActive(userId: Int) -> Bool {
+        let users = userModels.filter({ $0.id == userId })
+        return users[0].isActive
     }
 }
 
@@ -64,5 +70,10 @@ extension FriendsListInteractor: FriendsListBusinessLogic {
                 self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.userModels))
             }
         }
+    }
+    
+    func loadNextScreenData(request: FriendsListNextScreenModels.Request) {
+        guard isUserActive(userId: request) else { return }
+        presenter.presentNextScreenData(response: request)
     }
 }

@@ -10,16 +10,19 @@ import UIKit
 protocol FriendsListDisplayLogic: AnyObject {
     func displayData(viewModel: FriendsListModels.ViewModel)
     func displayRefreshedData(viewModel: FriendsListModels.ViewModel)
+    func displayNextScreen(viewModel: FriendsListNextScreenModels.ViewModel)
 }
 
 final class FriendsListViewController: UIViewController {
     
-    private let interactor: FriendsListBusinessLogic
     private let userId: Int?
+    private let interactor: FriendsListBusinessLogic
+    private let router: FriendsListRoutingLogic
     private let friendsListView = FriendsListView()
     
-    init(interactor: FriendsListBusinessLogic, userId: Int?) {
+    init(interactor: FriendsListBusinessLogic, router: FriendsListRoutingLogic, userId: Int?) {
         self.interactor = interactor
+        self.router = router
         self.userId = userId
         super.init(nibName: nil, bundle: nil)
     }
@@ -49,10 +52,18 @@ extension FriendsListViewController: FriendsListDisplayLogic {
         friendsListView.updateUsersList(users: viewModel.users)
         friendsListView.endRefreshing()
     }
+    
+    func displayNextScreen(viewModel: FriendsListNextScreenModels.ViewModel) {
+        router.routeToUserDetailsViewController(userId: viewModel)
+    }
 }
 
 // MARK: - DisplayFriendList
 extension FriendsListViewController: DisplayFriendList {
+    func didSelectUser(userId: Int) {
+        interactor.loadNextScreenData(request: userId)
+    }
+    
     func refreshData() {
         interactor.refreshData(request: FriendsListModels.Request(userId: userId))
     }

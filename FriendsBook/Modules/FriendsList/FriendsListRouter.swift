@@ -12,9 +12,9 @@ protocol FriendsListRoutingLogic: AnyObject {
 }
 
 final class FriendsListRouter {
-    weak var viewController: UserDetailsViewController?
+    weak var viewController: FriendsListViewController?
     
-    init(viewController: UserDetailsViewController? = nil) {
+    init(viewController: FriendsListViewController? = nil) {
         self.viewController = viewController
     }
 }

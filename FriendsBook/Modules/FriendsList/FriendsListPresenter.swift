@@ -8,6 +8,7 @@
 protocol FriendsListPresentationLogic: AnyObject {
     func presentData(response: FriendsListModels.Response)
     func presentRefreshedData(response: FriendsListModels.Response)
+    func presentNextScreenData(response: FriendsListNextScreenModels.Response)
 }
 
 final class FriendsListPresenter {
@@ -28,5 +29,9 @@ extension FriendsListPresenter: FriendsListPresentationLogic {
     
     func presentRefreshedData(response: FriendsListModels.Response) {
         viewController?.displayRefreshedData(viewModel: makeViewModel(response: response))
+    }
+    
+    func presentNextScreenData(response: FriendsListNextScreenModels.Response) {
+        viewController?.displayNextScreen(viewModel: response)
     }
 }

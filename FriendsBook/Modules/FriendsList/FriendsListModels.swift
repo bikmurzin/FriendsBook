@@ -23,3 +23,9 @@ enum FriendsListModels {
         }
     }
 }
+
+enum FriendsListNextScreenModels {
+    typealias Request = Int
+    typealias Response = Int
+    typealias ViewModel = Int
+}
