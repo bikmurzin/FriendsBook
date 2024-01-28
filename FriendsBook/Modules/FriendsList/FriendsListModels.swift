@@ -12,16 +12,7 @@ enum FriendsListModels {
     struct Response: Equatable {
         let users: [UserModel]
     }
-    struct ViewModel: Equatable {
-        let users: [User]
-        
-        struct User: Equatable {
-            let id: Int
-            let name: String
-            let email: String
-            let isActive: Bool
-        }
-    }
+    typealias ViewModel = UserViewModel
 }
 
 enum FriendsListNextScreenModels {

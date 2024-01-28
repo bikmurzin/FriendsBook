@@ -1,15 +1,14 @@
 //
 //  Project: FriendsBook
-//  File: FriendListTableViewCell.swift
+//  File: UserTableViewCell.swift
 //  Created by: Robert Bikmurzin
-//  Date: 27.01.2024
+//  Date: 28.01.2024
 //
 
 import UIKit
 import SnapKit
 
-final class FriendsListTableViewCell: UITableViewCell {
-    
+final class UserTableViewCell: UITableViewCell {
     static let identifier = "FriendListTableViewCell"
     
     private let nameLabel: UILabel = {
@@ -78,7 +77,7 @@ final class FriendsListTableViewCell: UITableViewCell {
 }
 
 // MARK: - Constants
-extension FriendsListTableViewCell {
+extension UserTableViewCell {
     enum Constants {
         static let nameTextColor: UIColor = .black
         static let emailTextColor: UIColor = .gray

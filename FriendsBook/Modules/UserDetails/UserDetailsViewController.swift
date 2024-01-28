@@ -13,10 +13,12 @@ protocol UserDetailsDisplayLogic: AnyObject {
 
 final class UserDetailsViewController: UIViewController {
     private let interactor: UserDetailsBusinessLogic
+    private let router: UserDetailsRoutingLogic
     private let userId: Int
     
-    init(interactor: UserDetailsBusinessLogic, userId: Int) {
+    init(interactor: UserDetailsBusinessLogic, router: UserDetailsRoutingLogic, userId: Int) {
         self.interactor = interactor
+        self.router = router
         self.userId = userId
         super.init(nibName: nil, bundle: nil)
     }

@@ -1,23 +1,22 @@
 //
 //  Project: FriendsBook
-//  File: FriendListView.swift
+//  File: UserListView.swift
 //  Created by: Robert Bikmurzin
-//  Date: 27.01.2024
+//  Date: 28.01.2024
 //
 
 import UIKit
 import SnapKit
 
-protocol DisplayFriendList: AnyObject {
+protocol DisplayUserList: AnyObject {
     func refreshData()
     func didSelectUser(userId: Int)
 }
 
-final class FriendsListView: UIView {
+final class UserListView: UIView {
+    weak var delegate: DisplayUserList?
     
-    weak var delegate: DisplayFriendList?
-    
-    private var users: [FriendsListModels.ViewModel.User] = []
+    private var users: [UserViewModel.User] = []
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -42,7 +41,7 @@ final class FriendsListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUsersList(users: [FriendsListModels.ViewModel.User]) {
+    func updateUsersList(users: [UserViewModel.User]) {
         self.users = users
         tableView.reloadData()
     }
@@ -59,7 +58,7 @@ final class FriendsListView: UIView {
     }
     
     private func registerCells() {
-        tableView.register(FriendsListTableViewCell.self, forCellReuseIdentifier: FriendsListTableViewCell.identifier)
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.identifier)
     }
     
     private func makeConstraints() {
@@ -76,7 +75,8 @@ final class FriendsListView: UIView {
     }
 }
 
-extension FriendsListView: UITableViewDelegate {
+// MARK: - UITableViewDelegate
+extension UserListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         Constants.heightForCell
     }
@@ -87,14 +87,15 @@ extension FriendsListView: UITableViewDelegate {
     }
 }
 
-extension FriendsListView: UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension UserListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = users[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendsListTableViewCell.identifier, for: indexPath) as? FriendsListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell else {
             return UITableViewCell()
         }
         cell.configCellData(viewModel: user)
@@ -103,7 +104,7 @@ extension FriendsListView: UITableViewDataSource {
 }
 
 // MARK: - Constants
-extension FriendsListView {
+extension UserListView {
     enum Constants {
         static let tableViewBackgroundColor: UIColor = .clear
         static let viewBackgroundColor: UIColor = .white

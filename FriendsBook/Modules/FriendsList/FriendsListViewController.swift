@@ -18,7 +18,7 @@ final class FriendsListViewController: UIViewController {
     private let userId: Int?
     private let interactor: FriendsListBusinessLogic
     private let router: FriendsListRoutingLogic
-    private let friendsListView = FriendsListView()
+    private let userListView = UserListView()
     
     init(interactor: FriendsListBusinessLogic, router: FriendsListRoutingLogic, userId: Int?) {
         self.interactor = interactor
@@ -32,8 +32,8 @@ final class FriendsListViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = friendsListView
-        friendsListView.delegate = self
+        self.view = userListView
+        userListView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -45,12 +45,12 @@ final class FriendsListViewController: UIViewController {
 // MARK: - FriendsListDisplayLogic
 extension FriendsListViewController: FriendsListDisplayLogic {
     func displayData(viewModel: FriendsListModels.ViewModel) {
-        friendsListView.updateUsersList(users: viewModel.users)
+        userListView.updateUsersList(users: viewModel.users)
     }
     
     func displayRefreshedData(viewModel: FriendsListModels.ViewModel) {
-        friendsListView.updateUsersList(users: viewModel.users)
-        friendsListView.endRefreshing()
+        userListView.updateUsersList(users: viewModel.users)
+        userListView.endRefreshing()
     }
     
     func displayNextScreen(viewModel: FriendsListNextScreenModels.ViewModel) {
@@ -59,7 +59,7 @@ extension FriendsListViewController: FriendsListDisplayLogic {
 }
 
 // MARK: - DisplayFriendList
-extension FriendsListViewController: DisplayFriendList {
+extension FriendsListViewController: DisplayUserList {
     func didSelectUser(userId: Int) {
         interactor.loadNextScreenData(request: userId)
     }

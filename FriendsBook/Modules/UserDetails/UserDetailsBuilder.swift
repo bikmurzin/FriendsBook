@@ -15,7 +15,9 @@ final class UserDetailsBuilder: UserDetailsBuildLogic {
     func build(userId: Int) -> UIViewController {
         let presenter = UserDetailsPresenter()
         let interactor = UserDetailsInteractor(presenter: presenter)
-        let viewController = UserDetailsViewController(interactor: interactor, userId: userId)
+        let router = UserDetailsRouter()
+        let viewController = UserDetailsViewController(interactor: interactor, router: router, userId: userId)
+        router.viewController = viewController
 
         presenter.viewController = viewController
         return viewController
