@@ -30,10 +30,10 @@
 		70EC38C12B64C8FC004BA618 /* DBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C02B64C8FC004BA618 /* DBModels.swift */; };
 		70EC38C42B64CB93004BA618 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C32B64CB93004BA618 /* Models.swift */; };
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
-		70EC38C92B656858004BA618 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C82B656858004BA618 /* FriendListView.swift */; };
+		70EC38C92B656858004BA618 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C82B656858004BA618 /* FriendsListView.swift */; };
 		70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CB2B656C2A004BA618 /* SnapKit */; };
 		70EC38CE2B656C2A004BA618 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */; };
-		70EC38D12B656CC4004BA618 /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D02B656CC4004BA618 /* FriendListTableViewCell.swift */; };
+		70EC38D12B656CC4004BA618 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D02B656CC4004BA618 /* FriendsListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,8 @@
 		70EC38C02B64C8FC004BA618 /* DBModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModels.swift; sourceTree = "<group>"; };
 		70EC38C32B64CB93004BA618 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		70EC38C62B64ECB6004BA618 /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
-		70EC38C82B656858004BA618 /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
-		70EC38D02B656CC4004BA618 /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
+		70EC38C82B656858004BA618 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		70EC38D02B656CC4004BA618 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +224,8 @@
 		70EC38CF2B656C95004BA618 /* FriendListView */ = {
 			isa = PBXGroup;
 			children = (
-				70EC38C82B656858004BA618 /* FriendListView.swift */,
-				70EC38D02B656CC4004BA618 /* FriendListTableViewCell.swift */,
+				70EC38C82B656858004BA618 /* FriendsListView.swift */,
+				70EC38D02B656CC4004BA618 /* FriendsListTableViewCell.swift */,
 			);
 			path = FriendListView;
 			sourceTree = "<group>";
@@ -324,9 +324,9 @@
 				70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */,
 				70EC38A42B6445C9004BA618 /* FriendsListViewController.swift in Sources */,
 				70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */,
-				70EC38C92B656858004BA618 /* FriendListView.swift in Sources */,
+				70EC38C92B656858004BA618 /* FriendsListView.swift in Sources */,
 				70EC38AD2B6446A5004BA618 /* UserDetailsViewController.swift in Sources */,
-				70EC38D12B656CC4004BA618 /* FriendListTableViewCell.swift in Sources */,
+				70EC38D12B656CC4004BA618 /* FriendsListTableViewCell.swift in Sources */,
 				70EC38BA2B645B6A004BA618 /* DBService.swift in Sources */,
 				70EC38A12B6445C9004BA618 /* FriendsListBuilder.swift in Sources */,
 				70EC38AF2B6446AB004BA618 /* UserDetailsPresenter.swift in Sources */,

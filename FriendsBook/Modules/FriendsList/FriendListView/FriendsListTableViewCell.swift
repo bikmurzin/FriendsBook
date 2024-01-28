@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class FriendListTableViewCell: UITableViewCell {
+final class FriendsListTableViewCell: UITableViewCell {
     
     static let identifier = "FriendListTableViewCell"
     
@@ -21,8 +21,9 @@ final class FriendListTableViewCell: UITableViewCell {
     
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Constants.nameTextColor
-        label.font = .systemFont(ofSize: Constants.nameFontSize)
+        label.textColor = Constants.emailTextColor
+        label.font = .systemFont(ofSize: Constants.emailFontSize)
+        label.textAlignment = .left
         return label
     }()
     
@@ -43,7 +44,7 @@ final class FriendListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configCellData(viewModel: FriendsListModels.ViewModel) {
+    func configCellData(viewModel: FriendsListModels.ViewModel.User) {
         nameLabel.text = viewModel.name
         emailLabel.text = viewModel.email
         switch viewModel.isActive {
@@ -52,6 +53,7 @@ final class FriendListTableViewCell: UITableViewCell {
             statusLabel.textColor = Constants.activeStatusColor
         case false:
             statusLabel.text = Constants.inactiveStatusText
+            statusLabel.textColor = Constants.inactiveStatusColor
         }
     }
     
@@ -61,33 +63,35 @@ final class FriendListTableViewCell: UITableViewCell {
         addSubview(statusLabel)
         nameLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Constants.horizontalPadding)
-            make.centerY.equalToSuperview().inset(Constants.verticalPadding)
+            make.bottom.equalTo(snp.centerY).inset(Constants.verticalPadding)
         }
         emailLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Constants.horizontalPadding)
-            make.centerY.equalToSuperview().offset(Constants.verticalPadding)
+            make.top.equalTo(snp.centerY).offset(Constants.verticalPadding)
         }
         statusLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(Constants.horizontalPadding)
             make.centerY.equalToSuperview()
+            make.width.equalTo(Constants.statusLabelWidth)
         }
     }
 }
 
 // MARK: - Constants
-extension FriendListTableViewCell {
+extension FriendsListTableViewCell {
     enum Constants {
         static let nameTextColor: UIColor = .black
         static let emailTextColor: UIColor = .gray
-        static let activeStatusColor: UIColor = .gray
-        static let inactiveStatusColor: UIColor = .gray
+        static let activeStatusColor: UIColor = .green
+        static let inactiveStatusColor: UIColor = .lightGray
         static let backgroundColor: UIColor = .clear
         static let nameFontSize: CGFloat = 20
         static let emailFontSize: CGFloat = 15
-        static let statusFontSize: CGFloat = 18
-        static let activeStatusText: String = "Active"
-        static let inactiveStatusText: String = "Inactive"
+        static let statusFontSize: CGFloat = 16
+        static let statusLabelWidth: CGFloat = 70
+        static let activeStatusText: String = "Online"
+        static let inactiveStatusText: String = "Offline"
         static let horizontalPadding: CGFloat = 15
-        static let verticalPadding: CGFloat = 15
+        static let verticalPadding: CGFloat = 5
     }
 }

@@ -8,6 +8,7 @@
 struct UserModel: Equatable, Decodable {
     let id: Int
     let guid: String
+    let isActive: Bool
     let balance: String
     let age: Int
     let eyeColor: String
@@ -24,9 +25,10 @@ struct UserModel: Equatable, Decodable {
     let friends: [Friend]
     let favoriteFruit: String
     
-    init(id: Int, guid: String, balance: String, age: Int, eyeColor: String, name: String, gender: String, company: String, email: String, phone: String, address: String, about: String, registered: String, latitude: Double, longitude: Double, friends: [Friend], favoriteFruit: String) {
+    init(id: Int, guid: String, isActive: Bool, balance: String, age: Int, eyeColor: String, name: String, gender: String, company: String, email: String, phone: String, address: String, about: String, registered: String, latitude: Double, longitude: Double, friends: [Friend], favoriteFruit: String) {
         self.id = id
         self.guid = guid
+        self.isActive = isActive
         self.balance = balance
         self.age = age
         self.eyeColor = eyeColor
@@ -47,6 +49,7 @@ struct UserModel: Equatable, Decodable {
     init (userDBModel: UserDBModel) {
         self.id = userDBModel.id
         self.guid = userDBModel.guid
+        self.isActive = userDBModel.isActive
         self.balance = userDBModel.balance
         self.age = userDBModel.age
         self.eyeColor = userDBModel.eyeColor

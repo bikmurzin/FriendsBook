@@ -11,6 +11,7 @@ import RealmSwift
 final class UserDBModel: Object {
     @objc dynamic var  id: Int = 0
     @objc dynamic var guid: String = ""
+    @objc dynamic var isActive: Bool = false
     @objc dynamic var balance: String = ""
     @objc dynamic var  age: Int = 0
     @objc dynamic var  eyeColor: String = ""
@@ -32,6 +33,7 @@ final class UserDBModel: Object {
         self.init()
         self.id = dataModel.id
         self.guid = dataModel.guid
+        self.isActive = dataModel.isActive
         self.balance = dataModel.balance
         self.age = dataModel.age
         self.eyeColor = dataModel.eyeColor

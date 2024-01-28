@@ -9,6 +9,7 @@ import Foundation
 
 protocol FriendsListBusinessLogic: AnyObject {
     func loadData(request: FriendsListModels.Request)
+    func refreshData(request: FriendsListModels.Request)
 }
 
 final class FriendsListInteractor {
@@ -21,6 +22,17 @@ final class FriendsListInteractor {
     init(presenter: FriendsListPresentationLogic) {
         self.presenter = presenter
     }
+    
+    private func getUserFriends(userId: Int) -> [UserModel] {
+        let friendsIds = self.userModels.filter({ $0.id == userId })[0].friends
+        let userFriends = self.userModels.filter({
+            let user = $0
+            return friendsIds.contains { friend in
+                friend.id == user.id
+            }
+        })
+        return userFriends
+    }
 }
 
 extension FriendsListInteractor: FriendsListBusinessLogic {
@@ -31,7 +43,26 @@ extension FriendsListInteractor: FriendsListBusinessLogic {
             self.group.leave()
         }
         group.notify(queue: .main) {
-            print("self.userModels: \(self.userModels)")
+            if let userId = request.userId {
+                self.presenter.presentData(response: FriendsListModels.Response(users: self.getUserFriends(userId: userId)))
+            } else {
+                self.presenter.presentData(response: FriendsListModels.Response(users: self.userModels))
+            }
+        }
+    }
+    
+    func refreshData(request: FriendsListModels.Request) {
+        group.enter()
+        queue.async {
+            self.userModels = self.dataWorker.loadAndUpdateUserData()
+            self.group.leave()
+        }
+        group.notify(queue: .main) {
+            if let userId = request.userId {
+                self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.getUserFriends(userId: userId)))
+            } else {
+                self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.userModels))
+            }
         }
     }
 }
