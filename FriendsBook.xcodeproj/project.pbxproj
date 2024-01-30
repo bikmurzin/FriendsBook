@@ -31,7 +31,6 @@
 		70EC38C42B64CB93004BA618 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C32B64CB93004BA618 /* Models.swift */; };
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
 		70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CB2B656C2A004BA618 /* SnapKit */; };
-		70EC38CE2B656C2A004BA618 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */; };
 		70EC38D32B6646D6004BA618 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D22B6646D6004BA618 /* UserDetailsView.swift */; };
 		70EC38D52B6651D6004BA618 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */; };
 		70EC38D72B665230004BA618 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D62B665230004BA618 /* UserListView.swift */; };
@@ -47,6 +46,19 @@
 		70ECEB092B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB082B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift */; };
 		70ECEB0B2B694BF800312D2F /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB0A2B694BF800312D2F /* CLLocation+Extensions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		70ECEB212B697C5A00312D2F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		70EC387E2B6444C3004BA618 /* FriendsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +108,6 @@
 				70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */,
 				70EC38BF2B645BAB004BA618 /* RealmSwift in Frameworks */,
 				70EC38BD2B645BAB004BA618 /* Realm in Frameworks */,
-				70EC38CE2B656C2A004BA618 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +119,7 @@
 			children = (
 				70EC38802B6444C3004BA618 /* FriendsBook */,
 				70EC387F2B6444C3004BA618 /* Products */,
+				70ECEB1D2B697C5900312D2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +286,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		70ECEB1D2B697C5900312D2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,9 +300,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70EC38922B6444C6004BA618 /* Build configuration list for PBXNativeTarget "FriendsBook" */;
 			buildPhases = (
-				70EC387A2B6444C3004BA618 /* Sources */,
 				70EC387B2B6444C3004BA618 /* Frameworks */,
+				70EC387A2B6444C3004BA618 /* Sources */,
 				70EC387C2B6444C3004BA618 /* Resources */,
+				70ECEB212B697C5A00312D2F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,7 +314,6 @@
 				70EC38BC2B645BAB004BA618 /* Realm */,
 				70EC38BE2B645BAB004BA618 /* RealmSwift */,
 				70EC38CB2B656C2A004BA618 /* SnapKit */,
-				70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */,
 			);
 			productName = FriendsBook;
 			productReference = 70EC387E2B6444C3004BA618 /* FriendsBook.app */;
@@ -636,11 +655,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

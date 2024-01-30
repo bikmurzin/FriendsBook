@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import MessageUI
 
 protocol UserDetailsDisplayLogic: AnyObject {
     func displayData(viewModel: UserDetailsModels.ViewModel)
     func displayNextScreen(viewModel: UserDetailsNextScreenModels.ViewModel)
+    func displayMail(viewModel: UserDetailsMailSendingModels.ViewModel)
 }
 
 final class UserDetailsViewController: UIViewController {
@@ -37,9 +39,26 @@ final class UserDetailsViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.title = "\(Constants.navigationTitle) \(userId)"
     }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
+    private func sendEmail(email: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setMessageBody("", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
 }
 
-extension UserDetailsViewController: UserDetailsDisplayLogic {
+extension UserDetailsViewController: UserDetailsDisplayLogic, MFMailComposeViewControllerDelegate {
     func displayData(viewModel: UserDetailsModels.ViewModel) {
         userDetailsView.updateView(viewModel: viewModel)
     }
@@ -47,20 +66,26 @@ extension UserDetailsViewController: UserDetailsDisplayLogic {
     func displayNextScreen(viewModel: UserDetailsNextScreenModels.ViewModel) {
         router.routeToNextUserDetailsViewController(userId: viewModel)
     }
+    
+    func displayMail(viewModel: UserDetailsMailSendingModels.ViewModel) {
+        sendEmail(email: viewModel)
+    }
+    
+    
 }
 
 // MARK: - DisplayUserDetails
 extension UserDetailsViewController: DisplayUserDetails {
     func openLocation() {
-        
+        interactor.openLocation()
     }
     
-    func makeCall() {
-        
+    func makeCall(phone: String) {
+        self.interactor.makeCall()
     }
     
     func writeEmail() {
-        
+        interactor.writeEmail()
     }
     
     func didSelectFriend(friendId: Int) {
@@ -71,6 +96,8 @@ extension UserDetailsViewController: DisplayUserDetails {
 // MARK: - Constants
 extension UserDetailsViewController {
     enum Constants {
+        static let callActionTitle: String = "Call"
+        static let cancelActionTitle: String = "Cancel"
         static let navigationTitle: String = "User Id:"
         static let testViewModel = UserDetailsModels.ViewModel(
             info: UserDetailsModels.ViewModel.Info(name: "Bikmurzin Robert", age: "28", company: "Freelance", registered: "22.02.2022"),

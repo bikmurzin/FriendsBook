@@ -10,7 +10,7 @@ import SnapKit
 
 protocol IContactsCellHandler: AnyObject {
     func emailButtonDidTap()
-    func phoneButtonDidTap()
+    func phoneButtonDidTap(phone: String)
 }
 
 final class ContactsCell: UITableViewCell {
@@ -87,7 +87,7 @@ final class ContactsCell: UITableViewCell {
     @objc
     private func phoneButtonTapped() {
         print("phoneButtonTapped")
-        delegate?.phoneButtonDidTap()
+        delegate?.phoneButtonDidTap(phone: phoneButton.titleLabel?.text ?? "")
     }
 }
 

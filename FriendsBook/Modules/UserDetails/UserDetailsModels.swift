@@ -54,4 +54,19 @@ enum UserDetailsNextScreenModels {
     typealias ViewModel = Int
 }
 
+enum UserDetailsMailSendingModels {
+    typealias Response = String    
+    typealias ViewModel = String
+}
 
+enum UserDetailsMapModels {
+    struct Response: Equatable {
+        let latitude: String
+        let longtitude: String
+    }
+    
+    struct ViewModel: Equatable {
+        let latitude: String
+        let longtitude: String
+    }
+}

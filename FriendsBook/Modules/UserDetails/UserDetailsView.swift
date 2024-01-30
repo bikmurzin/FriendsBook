@@ -11,7 +11,7 @@ import SnapKit
 protocol DisplayUserDetails: AnyObject {
     func didSelectFriend(friendId: Int)
     func openLocation()
-    func makeCall()
+    func makeCall(phone: String)
     func writeEmail()
 }
 
@@ -180,9 +180,9 @@ extension UserDetailsView: IContactsCellHandler {
         delegate?.writeEmail()
     }
     
-    func phoneButtonDidTap() {
+    func phoneButtonDidTap(phone: String) {
         print("phoneButtonDidTap")
-        delegate?.makeCall()
+        delegate?.makeCall(phone: phone)
     }
 }
 

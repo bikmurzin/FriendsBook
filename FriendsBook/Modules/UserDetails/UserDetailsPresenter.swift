@@ -11,6 +11,7 @@ import CoreLocation
 protocol UserDetailsPresentationLogic: AnyObject {
     func presentData(response: UserDetailsModels.Response)
     func presentNextScreen(response: UserDetailsNextScreenModels.Response)
+    func presentMail(response: UserDetailsMailSendingModels.Response)
 }
 
 final class UserDetailsPresenter {
@@ -68,6 +69,10 @@ extension UserDetailsPresenter: UserDetailsPresentationLogic {
     
     func presentNextScreen(response: UserDetailsNextScreenModels.Response) {
         viewController?.displayNextScreen(viewModel: response)
+    }
+    
+    func presentMail(response: UserDetailsMailSendingModels.Response) {
+        viewController?.displayMail(viewModel: response)
     }
 }
 
