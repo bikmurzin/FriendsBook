@@ -15,6 +15,7 @@ final class UserDetailsViewController: UIViewController {
     private let interactor: UserDetailsBusinessLogic
     private let router: UserDetailsRoutingLogic
     private let userId: Int
+    private let userDetailsView = UserDetailsView()
     
     init(interactor: UserDetailsBusinessLogic, router: UserDetailsRoutingLogic, userId: Int) {
         self.interactor = interactor
@@ -29,10 +30,24 @@ final class UserDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view = userDetailsView
+        userDetailsView.updateView(viewModel: Constants.testViewModel)
     }
 }
 
 extension UserDetailsViewController: UserDetailsDisplayLogic {
     
+}
+
+// MARK: - Constants
+extension UserDetailsViewController {
+    enum Constants {
+        static let testViewModel = UserDetailsModels.ViewModel(
+            info: UserDetailsModels.ViewModel.Info(name: "Bikmurzin Robert", age: "28", company: "Freelance", registered: "22.02.2022"),
+            about: "Eu Lorem commodo nisi exercitation dolore. Eiusmod officia mollit proident labore ea nostrud elit esse sit commodo. Magna sunt nostrud magna irure magna exercitation ipsum ullamco irure nostrud.\r\n",
+            contacts: UserDetailsModels.ViewModel.Contacts(email: "bikmurzinrm@gmail.com", phone: "+7 963 911 12 03", address: "Samara, samarskaya oblast, s'ezdovskaya, 9, 45"),
+            location: "22'' 23' 3232'",
+            friends: [UserViewModel.User(id: 1, name: "Potap", email: "potap@gmail.com", isActive: true)],
+            additionalInfo: UserDetailsModels.ViewModel.AdditionalInfo(eyeColor: .green, favoriteFruitImage: UIImage(systemName: "apple.logo")))
+    }
 }

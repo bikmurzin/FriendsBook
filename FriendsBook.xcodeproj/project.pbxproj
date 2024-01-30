@@ -30,10 +30,20 @@
 		70EC38C12B64C8FC004BA618 /* DBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C02B64C8FC004BA618 /* DBModels.swift */; };
 		70EC38C42B64CB93004BA618 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C32B64CB93004BA618 /* Models.swift */; };
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
-		70EC38C92B656858004BA618 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C82B656858004BA618 /* FriendsListView.swift */; };
 		70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CB2B656C2A004BA618 /* SnapKit */; };
 		70EC38CE2B656C2A004BA618 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CD2B656C2A004BA618 /* SnapKit-Dynamic */; };
-		70EC38D12B656CC4004BA618 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D02B656CC4004BA618 /* FriendsListTableViewCell.swift */; };
+		70EC38D32B6646D6004BA618 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D22B6646D6004BA618 /* UserDetailsView.swift */; };
+		70EC38D52B6651D6004BA618 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */; };
+		70EC38D72B665230004BA618 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D62B665230004BA618 /* UserListView.swift */; };
+		70EC38D92B6655A6004BA618 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D82B6655A6004BA618 /* UserViewModel.swift */; };
+		70ECEAF32B6818DC00312D2F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAF22B6818DC00312D2F /* UIView+Extensions.swift */; };
+		70ECEAF52B681AC000312D2F /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAF42B681AC000312D2F /* UIStackView+Extensions.swift */; };
+		70ECEAF82B6830DE00312D2F /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAF72B6830DE00312D2F /* InfoCell.swift */; };
+		70ECEAFA2B6830EB00312D2F /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAF92B6830EB00312D2F /* AboutCell.swift */; };
+		70ECEAFC2B6830F600312D2F /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAFB2B6830F600312D2F /* ContactsCell.swift */; };
+		70ECEAFE2B68310100312D2F /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAFD2B68310100312D2F /* LocationCell.swift */; };
+		70ECEB002B68310E00312D2F /* AdditionalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAFF2B68310E00312D2F /* AdditionalInfoCell.swift */; };
+		70ECEB022B68345700312D2F /* UserDetailsHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +70,18 @@
 		70EC38C02B64C8FC004BA618 /* DBModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModels.swift; sourceTree = "<group>"; };
 		70EC38C32B64CB93004BA618 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		70EC38C62B64ECB6004BA618 /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
-		70EC38C82B656858004BA618 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
-		70EC38D02B656CC4004BA618 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		70EC38D22B6646D6004BA618 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		70EC38D62B665230004BA618 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		70EC38D82B6655A6004BA618 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		70ECEAF22B6818DC00312D2F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		70ECEAF42B681AC000312D2F /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		70ECEAF72B6830DE00312D2F /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		70ECEAF92B6830EB00312D2F /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		70ECEAFB2B6830F600312D2F /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
+		70ECEAFD2B68310100312D2F /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		70ECEAFF2B68310E00312D2F /* AdditionalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCell.swift; sourceTree = "<group>"; };
+		70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsHorizontalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +130,7 @@
 		70EC38952B64456D004BA618 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				70ECEAF12B6818CF00312D2F /* Extensions */,
 				70EC38C52B64ECAA004BA618 /* Workers */,
 				70EC38C22B64CB89004BA618 /* Models */,
 				70EC38B42B645348004BA618 /* Views */,
@@ -157,7 +178,6 @@
 		70EC389A2B6445C9004BA618 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
-				70EC38CF2B656C95004BA618 /* FriendListView */,
 				70EC389B2B6445C9004BA618 /* FriendsListBuilder.swift */,
 				70EC389C2B6445C9004BA618 /* FriendsListInteractor.swift */,
 				70EC389D2B6445C9004BA618 /* FriendsListPresenter.swift */,
@@ -171,12 +191,14 @@
 		70EC38A72B6445D1004BA618 /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
+				70ECEAF62B6830C100312D2F /* View */,
 				70EC38B22B6446BD004BA618 /* UserDetailsBuilder.swift */,
 				70EC38B02B6446B6004BA618 /* UserDetailsInteractor.swift */,
 				70EC38AE2B6446AB004BA618 /* UserDetailsPresenter.swift */,
 				70EC38AC2B6446A5004BA618 /* UserDetailsViewController.swift */,
 				70EC38AA2B64469C004BA618 /* UserDetailsModels.swift */,
 				70EC38A82B644694004BA618 /* UserDetailsRouter.swift */,
+				70EC38D22B6646D6004BA618 /* UserDetailsView.swift */,
 			);
 			path = UserDetails;
 			sourceTree = "<group>";
@@ -184,6 +206,9 @@
 		70EC38B42B645348004BA618 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */,
+				70EC38D62B665230004BA618 /* UserListView.swift */,
+				70EC38D82B6655A6004BA618 /* UserViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,13 +246,26 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
-		70EC38CF2B656C95004BA618 /* FriendListView */ = {
+		70ECEAF12B6818CF00312D2F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				70EC38C82B656858004BA618 /* FriendsListView.swift */,
-				70EC38D02B656CC4004BA618 /* FriendsListTableViewCell.swift */,
+				70ECEAF22B6818DC00312D2F /* UIView+Extensions.swift */,
+				70ECEAF42B681AC000312D2F /* UIStackView+Extensions.swift */,
 			);
-			path = FriendListView;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70ECEAF62B6830C100312D2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				70ECEAF72B6830DE00312D2F /* InfoCell.swift */,
+				70ECEAF92B6830EB00312D2F /* AboutCell.swift */,
+				70ECEAFB2B6830F600312D2F /* ContactsCell.swift */,
+				70ECEAFD2B68310100312D2F /* LocationCell.swift */,
+				70ECEAFF2B68310E00312D2F /* AdditionalInfoCell.swift */,
+				70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,25 +349,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				70EC38A22B6445C9004BA618 /* FriendsListInteractor.swift in Sources */,
+				70EC38D52B6651D6004BA618 /* UserTableViewCell.swift in Sources */,
 				70EC38C42B64CB93004BA618 /* Models.swift in Sources */,
 				70EC38822B6444C3004BA618 /* AppDelegate.swift in Sources */,
 				70EC38A62B6445C9004BA618 /* FriendsListRouter.swift in Sources */,
 				70EC38C12B64C8FC004BA618 /* DBModels.swift in Sources */,
+				70ECEAF32B6818DC00312D2F /* UIView+Extensions.swift in Sources */,
 				70EC38AB2B64469C004BA618 /* UserDetailsModels.swift in Sources */,
 				70EC38A32B6445C9004BA618 /* FriendsListPresenter.swift in Sources */,
+				70ECEAF82B6830DE00312D2F /* InfoCell.swift in Sources */,
+				70ECEB022B68345700312D2F /* UserDetailsHorizontalView.swift in Sources */,
 				70EC38B32B6446BD004BA618 /* UserDetailsBuilder.swift in Sources */,
+				70ECEAFA2B6830EB00312D2F /* AboutCell.swift in Sources */,
 				70EC38842B6444C3004BA618 /* SceneDelegate.swift in Sources */,
 				70EC38B12B6446B6004BA618 /* UserDetailsInteractor.swift in Sources */,
 				70EC38A92B644694004BA618 /* UserDetailsRouter.swift in Sources */,
 				70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */,
+				70ECEB002B68310E00312D2F /* AdditionalInfoCell.swift in Sources */,
+				70EC38D32B6646D6004BA618 /* UserDetailsView.swift in Sources */,
 				70EC38A42B6445C9004BA618 /* FriendsListViewController.swift in Sources */,
 				70EC38B82B645A91004BA618 /* NetworkService.swift in Sources */,
-				70EC38C92B656858004BA618 /* FriendsListView.swift in Sources */,
 				70EC38AD2B6446A5004BA618 /* UserDetailsViewController.swift in Sources */,
-				70EC38D12B656CC4004BA618 /* FriendsListTableViewCell.swift in Sources */,
+				70ECEAFC2B6830F600312D2F /* ContactsCell.swift in Sources */,
+				70ECEAFE2B68310100312D2F /* LocationCell.swift in Sources */,
+				70EC38D72B665230004BA618 /* UserListView.swift in Sources */,
 				70EC38BA2B645B6A004BA618 /* DBService.swift in Sources */,
 				70EC38A12B6445C9004BA618 /* FriendsListBuilder.swift in Sources */,
 				70EC38AF2B6446AB004BA618 /* UserDetailsPresenter.swift in Sources */,
+				70ECEAF52B681AC000312D2F /* UIStackView+Extensions.swift in Sources */,
+				70EC38D92B6655A6004BA618 /* UserViewModel.swift in Sources */,
 				70EC38A52B6445C9004BA618 /* FriendsListModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

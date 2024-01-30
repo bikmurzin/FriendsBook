@@ -43,10 +43,11 @@ final class UserTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configCellData(viewModel: FriendsListModels.ViewModel.User) {
-        nameLabel.text = viewModel.name
-        emailLabel.text = viewModel.email
-        switch viewModel.isActive {
+    func configCellData(viewModel: FriendsListModels.ViewModel.User?) {
+        nameLabel.text = viewModel?.name
+        emailLabel.text = viewModel?.email
+        guard let isActive = viewModel?.isActive else { return }
+        switch isActive {
         case true:
             statusLabel.text = Constants.activeStatusText
             statusLabel.textColor = Constants.activeStatusColor
@@ -90,7 +91,7 @@ extension UserTableViewCell {
         static let statusLabelWidth: CGFloat = 70
         static let activeStatusText: String = "Online"
         static let inactiveStatusText: String = "Offline"
-        static let horizontalPadding: CGFloat = 15
+        static let horizontalPadding: CGFloat = 20
         static let verticalPadding: CGFloat = 5
     }
 }
