@@ -34,6 +34,8 @@ final class UserDetailsViewController: UIViewController {
         view = userDetailsView
         userDetailsView.delegate = self
         interactor.loadData(userId: userId)
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = "\(Constants.navigationTitle) \(userId)"
     }
 }
 
@@ -49,6 +51,18 @@ extension UserDetailsViewController: UserDetailsDisplayLogic {
 
 // MARK: - DisplayUserDetails
 extension UserDetailsViewController: DisplayUserDetails {
+    func openLocation() {
+        
+    }
+    
+    func makeCall() {
+        
+    }
+    
+    func writeEmail() {
+        
+    }
+    
     func didSelectFriend(friendId: Int) {
         interactor.createNextScreen(request: friendId)
     }
@@ -57,6 +71,7 @@ extension UserDetailsViewController: DisplayUserDetails {
 // MARK: - Constants
 extension UserDetailsViewController {
     enum Constants {
+        static let navigationTitle: String = "User Id:"
         static let testViewModel = UserDetailsModels.ViewModel(
             info: UserDetailsModels.ViewModel.Info(name: "Bikmurzin Robert", age: "28", company: "Freelance", registered: "22.02.2022"),
             about: "Eu Lorem commodo nisi exercitation dolore. Eiusmod officia mollit proident labore ea nostrud elit esse sit commodo. Magna sunt nostrud magna irure magna exercitation ipsum ullamco irure nostrud.\r\n",

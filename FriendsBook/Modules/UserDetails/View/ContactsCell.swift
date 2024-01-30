@@ -8,9 +8,15 @@
 import UIKit
 import SnapKit
 
+protocol IContactsCellHandler: AnyObject {
+    func emailButtonDidTap()
+    func phoneButtonDidTap()
+}
+
 final class ContactsCell: UITableViewCell {
     
     static let identifier = "ContactsCell"
+    weak var delegate: IContactsCellHandler?
     
     private let addressLabel: UILabel = {
         let label = UILabel()
@@ -22,11 +28,13 @@ final class ContactsCell: UITableViewCell {
     
     private let emailButton: UIButton = {
         let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(emailButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private let phoneButton: UIButton = {
         let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(phoneButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -68,6 +76,18 @@ final class ContactsCell: UITableViewCell {
             make.top.equalTo(emailButton.snp.bottom).offset(Constants.topPadding)
             make.horizontalEdges.equalToSuperview().inset(Constants.horizontalPadding)
         }
+    }
+    
+    @objc
+    private func emailButtonTapped() {
+        print("emailButtonTapped")
+        delegate?.emailButtonDidTap()
+    }
+    
+    @objc
+    private func phoneButtonTapped() {
+        print("phoneButtonTapped")
+        delegate?.phoneButtonDidTap()
     }
 }
 

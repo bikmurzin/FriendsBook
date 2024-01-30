@@ -38,6 +38,8 @@ final class FriendsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = Constants.navigationTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
         interactor.loadData(request: FriendsListModels.Request(userId: userId))
     }
 }
@@ -66,5 +68,12 @@ extension FriendsListViewController: DisplayUserList {
     
     func refreshData() {
         interactor.refreshData(request: FriendsListModels.Request(userId: userId))
+    }
+}
+
+// MARK: - Constants
+extension FriendsListViewController {
+    enum Constants {
+        static let navigationTitle = "User List"
     }
 }

@@ -10,6 +10,9 @@ import SnapKit
 
 protocol DisplayUserDetails: AnyObject {
     func didSelectFriend(friendId: Int)
+    func openLocation()
+    func makeCall()
+    func writeEmail()
 }
 
 final class UserDetailsView: UIView {
@@ -103,7 +106,7 @@ extension UserDetailsView: UITableViewDelegate {
         case .contacts:
             break
         case .location:
-            break
+            delegate?.openLocation()
         case .additionalInfo:
             break
         case .friends:
@@ -131,27 +134,34 @@ extension UserDetailsView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch dataSource[indexPath.section] {
+            
         case .info(let info):
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.identifier, for: indexPath) as? InfoCell
             cell?.configCellData(viewModel: info)
             return cell ?? UITableViewCell()
+            
         case .about(let about):
             let cell = tableView.dequeueReusableCell(withIdentifier: AboutCell.identifier, for: indexPath) as? AboutCell
             cell?.configCellData(viewModel: about)
             return cell ?? UITableViewCell()
+            
         case .contacts(let contacts):
             let cell = tableView.dequeueReusableCell(withIdentifier: ContactsCell.identifier, for: indexPath) as? ContactsCell
             cell?.configCellData(viewModel: contacts)
+            cell?.delegate = self
             return cell ?? UITableViewCell()
+            
         case .location(let location):
             let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.identifier, for: indexPath) as? LocationCell
             cell?.configCellData(viewModel: location)
             return cell ?? UITableViewCell()
+            
         case .additionalInfo(let additionalInfo):
             let cell = tableView.dequeueReusableCell(withIdentifier: AdditionalInfoCell.identifier, for: indexPath) as? AdditionalInfoCell
             cell?.configCellData(viewModel: additionalInfo)
             return cell ?? UITableViewCell()
-        case .friends(let friends): 
+            
+        case .friends(let friends):
             let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell
             cell?.configCellData(viewModel: friends?[indexPath.row])
             return cell ?? UITableViewCell()
@@ -160,6 +170,19 @@ extension UserDetailsView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         dataSource[section].title
+    }
+}
+
+// MARK: - IContactsCellHandler
+extension UserDetailsView: IContactsCellHandler {
+    func emailButtonDidTap() {
+        print("emailButtonDidTap")
+        delegate?.writeEmail()
+    }
+    
+    func phoneButtonDidTap() {
+        print("phoneButtonDidTap")
+        delegate?.makeCall()
     }
 }
 
