@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol DisplayUserDetails: AnyObject {
+    func didSelectFriend(friendId: Int)
+}
+
 final class UserDetailsView: UIView {
+    
+    weak var delegate: DisplayUserDetails?
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -84,6 +90,24 @@ extension UserDetailsView: UITableViewDelegate {
         case .location: return Constants.locationCellHeight
         case .additionalInfo: return Constants.additionalInfoCellHeight
         case .friends: return Constants.friendsCellHeight
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch dataSource[indexPath.section] {
+        case .info:
+            break
+        case .about:
+            break
+        case .contacts:
+            break
+        case .location:
+            break
+        case .additionalInfo:
+            break
+        case .friends:
+            delegate?.didSelectFriend(friendId: indexPath.row)
         }
     }
 }

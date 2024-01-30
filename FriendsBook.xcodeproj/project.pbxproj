@@ -44,6 +44,8 @@
 		70ECEAFE2B68310100312D2F /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAFD2B68310100312D2F /* LocationCell.swift */; };
 		70ECEB002B68310E00312D2F /* AdditionalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAFF2B68310E00312D2F /* AdditionalInfoCell.swift */; };
 		70ECEB022B68345700312D2F /* UserDetailsHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */; };
+		70ECEB092B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB082B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift */; };
+		70ECEB0B2B694BF800312D2F /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB0A2B694BF800312D2F /* CLLocation+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		70ECEAFD2B68310100312D2F /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		70ECEAFF2B68310E00312D2F /* AdditionalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoCell.swift; sourceTree = "<group>"; };
 		70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsHorizontalView.swift; sourceTree = "<group>"; };
+		70ECEB082B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Extensions.swift"; sourceTree = "<group>"; };
+		70ECEB0A2B694BF800312D2F /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,8 @@
 			children = (
 				70ECEAF22B6818DC00312D2F /* UIView+Extensions.swift */,
 				70ECEAF42B681AC000312D2F /* UIStackView+Extensions.swift */,
+				70ECEB082B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift */,
+				70ECEB0A2B694BF800312D2F /* CLLocation+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				70ECEB022B68345700312D2F /* UserDetailsHorizontalView.swift in Sources */,
 				70EC38B32B6446BD004BA618 /* UserDetailsBuilder.swift in Sources */,
 				70ECEAFA2B6830EB00312D2F /* AboutCell.swift in Sources */,
+				70ECEB092B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift in Sources */,
 				70EC38842B6444C3004BA618 /* SceneDelegate.swift in Sources */,
 				70EC38B12B6446B6004BA618 /* UserDetailsInteractor.swift in Sources */,
 				70EC38A92B644694004BA618 /* UserDetailsRouter.swift in Sources */,
@@ -378,6 +385,7 @@
 				70EC38AF2B6446AB004BA618 /* UserDetailsPresenter.swift in Sources */,
 				70ECEAF52B681AC000312D2F /* UIStackView+Extensions.swift in Sources */,
 				70EC38D92B6655A6004BA618 /* UserViewModel.swift in Sources */,
+				70ECEB0B2B694BF800312D2F /* CLLocation+Extensions.swift in Sources */,
 				70EC38A52B6445C9004BA618 /* FriendsListModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

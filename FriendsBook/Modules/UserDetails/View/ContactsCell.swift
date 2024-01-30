@@ -21,14 +21,12 @@ final class ContactsCell: UITableViewCell {
     }()
     
     private let emailButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(Constants.buttonsColor, for: .normal)
+        let button = UIButton(type: .system)
         return button
     }()
     
     private let phoneButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(Constants.buttonsColor, for: .normal)
+        let button = UIButton(type: .system)
         return button
     }()
     
@@ -56,11 +54,19 @@ final class ContactsCell: UITableViewCell {
     }
     
     private func makeConstraints() {
-        addSubview(verticalStackView)
-        verticalStackView.addArrangedSubviews(views: [phoneButton, emailButton, addressLabel])
-        verticalStackView.snp.makeConstraints { make in
+        contentView.addSubviews(views: [emailButton, phoneButton])
+        addSubview(addressLabel)
+        phoneButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(Constants.firstContactTopPadding)
+            make.leading.equalToSuperview().inset(Constants.horizontalPadding)
+        }
+        emailButton.snp.makeConstraints { make in
+            make.top.equalTo(phoneButton.snp.bottom).offset(Constants.topPadding)
+            make.leading.equalToSuperview().inset(Constants.horizontalPadding)
+        }
+        addressLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailButton.snp.bottom).offset(Constants.topPadding)
             make.horizontalEdges.equalToSuperview().inset(Constants.horizontalPadding)
-            make.verticalEdges.equalToSuperview().inset(Constants.verticalPadding)
         }
     }
 }
@@ -72,7 +78,8 @@ extension ContactsCell {
         static let addressTextSize: CGFloat = 18
         static let stackViewSpacing: CGFloat = 15
         static let horizontalPadding: CGFloat = 20
-        static let verticalPadding: CGFloat = 5
+        static let topPadding: CGFloat = 15
+        static let firstContactTopPadding: CGFloat = 10
         static let buttonsColor: UIColor = .blue
         
     }

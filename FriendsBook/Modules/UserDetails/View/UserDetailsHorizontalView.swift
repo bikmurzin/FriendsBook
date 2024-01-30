@@ -61,6 +61,6 @@ extension UserDetailsHorizontalView {
         static let leftLabelTextColor: UIColor = .secondaryLabel
         static let rightLabelTextColor: UIColor = .label
         static let horizontalPadding: CGFloat = 15
-        static let selfBackgroundColor: UIColor = .white
+        static let selfBackgroundColor: UIColor = .clear
     }
 }

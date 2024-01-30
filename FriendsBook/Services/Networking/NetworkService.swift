@@ -13,7 +13,7 @@ enum NetworkError: Error {
 }
 
 final class NetworkService {
-    func makeRequest<T: Decodable>(urlString: String,
+    static func makeRequest<T: Decodable>(urlString: String,
         completionHandler: @escaping (_ result: Result<T, NetworkError>) -> Void
     ) {
         guard let url =  URL(string: urlString) else {

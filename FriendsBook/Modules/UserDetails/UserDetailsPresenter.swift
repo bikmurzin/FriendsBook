@@ -5,53 +5,77 @@
 //  Date: 26.01.2024
 //
 
+import UIKit
+import CoreLocation
+
 protocol UserDetailsPresentationLogic: AnyObject {
-    
+    func presentData(response: UserDetailsModels.Response)
+    func presentNextScreen(response: UserDetailsNextScreenModels.Response)
 }
 
 final class UserDetailsPresenter {
-    weak var viewController: UserDetailsDisplayLogic?
-}
-
-extension UserDetailsPresenter: UserDetailsPresentationLogic {
     
+    weak var viewController: UserDetailsDisplayLogic?
+    
+    private func makeViewModel(response: UserDetailsModels.Response) -> UserDetailsModels.ViewModel {
+        let registered = formatDate(date: stringToDate(isoDate: response.currentUser.registered))
+        let location = CLLocation(latitude: response.currentUser.latitude, longitude: response.currentUser.longitude)
+        let friends = response.userFriends.map { user in
+            UserViewModel.User(id: user.id, name: user.name, email: user.email, isActive: user.isActive)
+        }
+        var eyeColor: UIColor = .black
+        switch response.currentUser.eyeColor {
+        case "green":
+            eyeColor = Constants.greenColor
+        case "brown":
+            eyeColor = Constants.brownColor
+        case "blue":
+            eyeColor = Constants.blueColor
+        default:
+            break
+        }
+        var fruitImage = UIImage(named: response.currentUser.favoriteFruit)
+        let viewModel = UserDetailsModels.ViewModel(
+            info: UserDetailsModels.ViewModel.Info(name: response.currentUser.name, age: String(response.currentUser.age), company: response.currentUser.company, registered: registered),
+            about: response.currentUser.about,
+            contacts: UserDetailsModels.ViewModel.Contacts(email: response.currentUser.email, phone: response.currentUser.phone, address: response.currentUser.address),
+            location: location.dms,
+            friends: friends,
+            additionalInfo: UserDetailsModels.ViewModel.AdditionalInfo(eyeColor: eyeColor, favoriteFruitImage: fruitImage))
+        return viewModel
+    }
+    
+    private func stringToDate(isoDate: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFormatter.date(from:isoDate)!
+    }
+    
+    private func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "HH:mm dd.MM.yy"
+        return dateFormatter.string(from: date)
+    }
 }
 
-/*
- 
- // функции пересчета координат из DD.DDDDDD в DD MM SS.SS:
+// MARK: - UserDetailsPresentationLogic
+extension UserDetailsPresenter: UserDetailsPresentationLogic {
+    func presentData(response: UserDetailsModels.Response) {
+        viewController?.displayData(viewModel: makeViewModel(response: response))
+    }
+    
+    func presentNextScreen(response: UserDetailsNextScreenModels.Response) {
+        viewController?.displayNextScreen(viewModel: response)
+    }
+}
 
- // Широта:
- func latCoordConvertDDtoDMS(latitude: Double) -> String {
-     var latSeconds = latitude * 3600
-     let latDegrees = Int(latSeconds / 3600)
-     latSeconds = abs(latSeconds.truncatingRemainder (dividingBy: 3600))
-     let latMinutes = Int(latSeconds / 60)
-     latSeconds = latSeconds.truncatingRemainder (dividingBy: 60)
-     return String(
-         format: "%@%02d° %02d' %05.2f\"",
-         //format: "%@ %.2f° %.2f' %.2f",
-         latDegrees >= 0 ? "N" : "S",
-         abs(latDegrees),
-         latMinutes,
-         latSeconds
-     )
- }
-
- // Долгота:
- func lonCoordConvertDDtoDMS(longitude: Double) -> String {
-     var longSeconds = longitude * 3600
-     let longDegrees = Int(longSeconds / 3600)
-     longSeconds = abs(longSeconds.truncatingRemainder (dividingBy: 3600))
-     let longMinutes = Int(longSeconds / 60)
-     longSeconds = longSeconds.truncatingRemainder (dividingBy: 60)
-     return String(
-         format: "%@%03d° %02d' %05.2f\"",
-         longDegrees >= 0 ? "E" : "W",
-         abs(longDegrees),
-         longMinutes,
-         longSeconds
-     )
- }
- 
- */
+// MARK: - Constants
+extension UserDetailsPresenter {
+    enum Constants {
+        static let greenColor: UIColor = .green
+        static let brownColor: UIColor = .brown
+        static let blueColor: UIColor = .blue
+    }
+}

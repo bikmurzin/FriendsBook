@@ -8,7 +8,8 @@
 import UIKit
 
 protocol UserDetailsDisplayLogic: AnyObject {
-    
+    func displayData(viewModel: UserDetailsModels.ViewModel)
+    func displayNextScreen(viewModel: UserDetailsNextScreenModels.ViewModel)
 }
 
 final class UserDetailsViewController: UIViewController {
@@ -31,12 +32,26 @@ final class UserDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = userDetailsView
-        userDetailsView.updateView(viewModel: Constants.testViewModel)
+        userDetailsView.delegate = self
+        interactor.loadData(userId: userId)
     }
 }
 
 extension UserDetailsViewController: UserDetailsDisplayLogic {
+    func displayData(viewModel: UserDetailsModels.ViewModel) {
+        userDetailsView.updateView(viewModel: viewModel)
+    }
     
+    func displayNextScreen(viewModel: UserDetailsNextScreenModels.ViewModel) {
+        router.routeToNextUserDetailsViewController(userId: viewModel)
+    }
+}
+
+// MARK: - DisplayUserDetails
+extension UserDetailsViewController: DisplayUserDetails {
+    func didSelectFriend(friendId: Int) {
+        interactor.createNextScreen(request: friendId)
+    }
 }
 
 // MARK: - Constants

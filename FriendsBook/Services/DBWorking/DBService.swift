@@ -8,21 +8,9 @@
 import Foundation
 import RealmSwift
 
-protocol IDataBaseService {
-    func saveDataToDB(models: [UserModel])
-    func loadDataFromDB() -> [UserModel]
-    func deleteDataFromDB()
-    func isObjectExists(userId: Int) -> Bool
-    func isDBEmpty() -> Bool
-}
-
-final class DataBaseService {
-
-}
-
 // MARK: - IRealmManager
-extension DataBaseService: IDataBaseService {
-    func saveDataToDB(models: [UserModel]) {
+final class DataBaseService {
+    static func saveDataToDB(models: [UserModel]) {
         guard let realm = try? Realm() else { return }
         let dbObjects = models.map { model in
             UserDBModel(dataModel: model)
@@ -39,7 +27,7 @@ extension DataBaseService: IDataBaseService {
         }
     }
     
-    func loadDataFromDB() -> [UserModel] {
+    static func loadDataFromDB() -> [UserModel] {
         guard let realm = try? Realm() else { return [] }
         let dbItems = realm.objects(UserDBModel.self)
         let UserModels: [UserModel] = dbItems.map { result in
@@ -48,7 +36,7 @@ extension DataBaseService: IDataBaseService {
         return UserModels
     }
     
-    func deleteDataFromDB() {
+    static func deleteDataFromDB() {
         guard let realm = try? Realm() else { return }
         do {
             try realm.write {
@@ -59,7 +47,7 @@ extension DataBaseService: IDataBaseService {
         }
     }
     
-    func isObjectExists(userId: Int) -> Bool {
+    static func isObjectExists(userId: Int) -> Bool {
         guard let realm = try? Realm() else { return false }
         var isObjectExists = false
         do {
@@ -75,7 +63,7 @@ extension DataBaseService: IDataBaseService {
         return isObjectExists
     }
     
-    func isDBEmpty() -> Bool {
+    static func isDBEmpty() -> Bool {
         guard let realm = try? Realm() else { return true }
         return realm.isEmpty
     }

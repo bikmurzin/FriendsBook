@@ -10,22 +10,21 @@ import Foundation
 protocol IDataWorker {
     func loadAndUpdateUserData() -> [UserModel]
     func loadUserDataAndUpdateIfNeeded() -> [UserModel]
+    func loadData() -> [UserModel]
 }
 
 final class DataWorker {
-    private let networkService = NetworkService()
-    private let dbService = DataBaseService()
     private let queue = DispatchQueue(label: "dataWorkerQueue")
     private let group = DispatchGroup()
     
     private func loadDataFromAPI() -> [UserModel] {
         var loadedUserModels: [UserModel] = []
         group.enter()
-        networkService.makeRequest(urlString: Constants.urlString) { (result: Result<[UserModel], NetworkError>) in
+        NetworkService.makeRequest(urlString: Constants.urlString) { (result: Result<[UserModel], NetworkError>) in
             switch result {
             case .success(let userModels):
-                self.dbService.deleteDataFromDB()
-                self.dbService.saveDataToDB(models: userModels)
+                DataBaseService.deleteDataFromDB()
+                DataBaseService.saveDataToDB(models: userModels)
                 loadedUserModels = userModels
                 self.group.leave()
             case .failure(let error):
@@ -38,22 +37,32 @@ final class DataWorker {
     }
     
     private func loadDataFromDB() -> [UserModel] {
-        return dbService.loadDataFromDB()
+        return DataBaseService.loadDataFromDB()
     }
 }
 
 extension DataWorker: IDataWorker {
     
+    /// Сначала загружает данные из интернета, затем сохраняет их в БД и после возвращает на выходе
     func loadAndUpdateUserData() -> [UserModel] {
         return loadDataFromAPI()
     }
     
+    /// Возвращает данные, сохраненные ранее в БД. Если в БД записей нет, загрузит их из интернета.
     func loadUserDataAndUpdateIfNeeded() -> [UserModel] {
-        if dbService.isDBEmpty() {
+        if DataBaseService.isDBEmpty() {
             return loadDataFromAPI()
         } else {
             return loadDataFromDB()
         }
+    }
+    
+    /// Возвращает данные только из БД
+    func loadData() -> [UserModel] {
+        if !DataBaseService.isDBEmpty() {
+            return loadDataFromDB()
+        }
+        return []
     }
 }
 

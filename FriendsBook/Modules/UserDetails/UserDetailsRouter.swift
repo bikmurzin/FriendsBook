@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserDetailsRoutingLogic: AnyObject {
-    func routeToFriendsListViewController()
+    func routeToNextUserDetailsViewController(userId: Int)
 }
 
 final class UserDetailsRouter {
@@ -20,11 +20,11 @@ final class UserDetailsRouter {
 }
 
 extension UserDetailsRouter: UserDetailsRoutingLogic {
-    func routeToFriendsListViewController() {
+    func routeToNextUserDetailsViewController(userId: Int) {
         DispatchQueue.main.async {
-            let friendsListViewController = FriendsListBuilder().build()
+            let nextUserDetailsViewController = UserDetailsBuilder().build(userId: userId)
             guard let viewController = self.viewController else { return }
-            viewController.navigationController?.pushViewController(friendsListViewController, animated: true)
+            viewController.navigationController?.pushViewController(nextUserDetailsViewController, animated: true)
         }
     }
 }
