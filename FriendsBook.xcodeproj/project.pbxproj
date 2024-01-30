@@ -30,7 +30,6 @@
 		70EC38C12B64C8FC004BA618 /* DBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C02B64C8FC004BA618 /* DBModels.swift */; };
 		70EC38C42B64CB93004BA618 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C32B64CB93004BA618 /* Models.swift */; };
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
-		70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70EC38CB2B656C2A004BA618 /* SnapKit */; };
 		70EC38D32B6646D6004BA618 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D22B6646D6004BA618 /* UserDetailsView.swift */; };
 		70EC38D52B6651D6004BA618 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */; };
 		70EC38D72B665230004BA618 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D62B665230004BA618 /* UserListView.swift */; };
@@ -45,7 +44,28 @@
 		70ECEB022B68345700312D2F /* UserDetailsHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */; };
 		70ECEB092B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB082B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift */; };
 		70ECEB0B2B694BF800312D2F /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB0A2B694BF800312D2F /* CLLocation+Extensions.swift */; };
+		70ECEB342B698CAE00312D2F /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 70ECEB332B698CAE00312D2F /* Quick */; };
+		70ECEB372B698CC300312D2F /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 70ECEB362B698CC300312D2F /* Nimble */; };
+		70ECEB3C2B698D9800312D2F /* FriendListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB3B2B698D9800312D2F /* FriendListViewControllerTests.swift */; };
+		70ECEB3E2B698DD500312D2F /* FriendListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB3D2B698DD500312D2F /* FriendListPresenterTests.swift */; };
+		70ECEB402B698E0600312D2F /* FriendsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB3F2B698E0600312D2F /* FriendsListInteractorTests.swift */; };
+		70ECEB422B698E2600312D2F /* FriendListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB412B698E2600312D2F /* FriendListRouterTests.swift */; };
+		70ECEB442B698E3D00312D2F /* FriendListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB432B698E3D00312D2F /* FriendListBuilderTests.swift */; };
+		70ECEB462B698EA000312D2F /* FriendListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */; };
+		70ECEB482B698F2400312D2F /* FriendListInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */; };
+		70ECEB4A2B69966E00312D2F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70ECEB492B69966E00312D2F /* SnapKit */; };
+		70ECEB4C2B69966E00312D2F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70ECEB4B2B69966E00312D2F /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70ECEB2D2B698C4A00312D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70EC38762B6444C3004BA618 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70EC387D2B6444C3004BA618;
+			remoteInfo = FriendsBook;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		70ECEB212B697C5A00312D2F /* Embed Frameworks */ = {
@@ -98,6 +118,14 @@
 		70ECEB012B68345700312D2F /* UserDetailsHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsHorizontalView.swift; sourceTree = "<group>"; };
 		70ECEB082B694BEF00312D2F /* BinaryFloatingPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Extensions.swift"; sourceTree = "<group>"; };
 		70ECEB0A2B694BF800312D2F /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		70ECEB292B698C4A00312D2F /* FriendsBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendsBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70ECEB3B2B698D9800312D2F /* FriendListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewControllerTests.swift; sourceTree = "<group>"; };
+		70ECEB3D2B698DD500312D2F /* FriendListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPresenterTests.swift; sourceTree = "<group>"; };
+		70ECEB3F2B698E0600312D2F /* FriendsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListInteractorTests.swift; sourceTree = "<group>"; };
+		70ECEB412B698E2600312D2F /* FriendListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRouterTests.swift; sourceTree = "<group>"; };
+		70ECEB432B698E3D00312D2F /* FriendListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListBuilderTests.swift; sourceTree = "<group>"; };
+		70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPresenterMock.swift; sourceTree = "<group>"; };
+		70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListInteractorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +133,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70EC38CC2B656C2A004BA618 /* SnapKit in Frameworks */,
+				70ECEB4A2B69966E00312D2F /* SnapKit in Frameworks */,
 				70EC38BF2B645BAB004BA618 /* RealmSwift in Frameworks */,
 				70EC38BD2B645BAB004BA618 /* Realm in Frameworks */,
+				70ECEB4C2B69966E00312D2F /* SnapKit-Dynamic in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70ECEB262B698C4A00312D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70ECEB342B698CAE00312D2F /* Quick in Frameworks */,
+				70ECEB372B698CC300312D2F /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				70EC38802B6444C3004BA618 /* FriendsBook */,
+				70ECEB2A2B698C4A00312D2F /* FriendsBookTests */,
 				70EC387F2B6444C3004BA618 /* Products */,
 				70ECEB1D2B697C5900312D2F /* Frameworks */,
 			);
@@ -127,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				70EC387E2B6444C3004BA618 /* FriendsBook.app */,
+				70ECEB292B698C4A00312D2F /* FriendsBookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +333,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		70ECEB2A2B698C4A00312D2F /* FriendsBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				70ECEB382B698D4900312D2F /* Modules */,
+			);
+			path = FriendsBookTests;
+			sourceTree = "<group>";
+		};
+		70ECEB382B698D4900312D2F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				70ECEB392B698D5500312D2F /* FriendsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		70ECEB392B698D5500312D2F /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				70ECEB3A2B698D5F00312D2F /* Mock */,
+				70ECEB3B2B698D9800312D2F /* FriendListViewControllerTests.swift */,
+				70ECEB3D2B698DD500312D2F /* FriendListPresenterTests.swift */,
+				70ECEB3F2B698E0600312D2F /* FriendsListInteractorTests.swift */,
+				70ECEB412B698E2600312D2F /* FriendListRouterTests.swift */,
+				70ECEB432B698E3D00312D2F /* FriendListBuilderTests.swift */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		70ECEB3A2B698D5F00312D2F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */,
+				70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,11 +391,34 @@
 			packageProductDependencies = (
 				70EC38BC2B645BAB004BA618 /* Realm */,
 				70EC38BE2B645BAB004BA618 /* RealmSwift */,
-				70EC38CB2B656C2A004BA618 /* SnapKit */,
+				70ECEB492B69966E00312D2F /* SnapKit */,
+				70ECEB4B2B69966E00312D2F /* SnapKit-Dynamic */,
 			);
 			productName = FriendsBook;
 			productReference = 70EC387E2B6444C3004BA618 /* FriendsBook.app */;
 			productType = "com.apple.product-type.application";
+		};
+		70ECEB282B698C4A00312D2F /* FriendsBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70ECEB312B698C4A00312D2F /* Build configuration list for PBXNativeTarget "FriendsBookTests" */;
+			buildPhases = (
+				70ECEB252B698C4A00312D2F /* Sources */,
+				70ECEB262B698C4A00312D2F /* Frameworks */,
+				70ECEB272B698C4A00312D2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70ECEB2E2B698C4A00312D2F /* PBXTargetDependency */,
+			);
+			name = FriendsBookTests;
+			packageProductDependencies = (
+				70ECEB332B698CAE00312D2F /* Quick */,
+				70ECEB362B698CC300312D2F /* Nimble */,
+			);
+			productName = FriendsBookTests;
+			productReference = 70ECEB292B698C4A00312D2F /* FriendsBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -331,6 +432,11 @@
 				TargetAttributes = {
 					70EC387D2B6444C3004BA618 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					70ECEB282B698C4A00312D2F = {
+						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
+						TestTargetID = 70EC387D2B6444C3004BA618;
 					};
 				};
 			};
@@ -346,12 +452,15 @@
 			packageReferences = (
 				70EC38BB2B645BAB004BA618 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				70ECEB322B698CAE00312D2F /* XCRemoteSwiftPackageReference "Quick" */,
+				70ECEB352B698CC300312D2F /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = 70EC387F2B6444C3004BA618 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				70EC387D2B6444C3004BA618 /* FriendsBook */,
+				70ECEB282B698C4A00312D2F /* FriendsBookTests */,
 			);
 		};
 /* End PBXProject section */
@@ -363,6 +472,13 @@
 			files = (
 				70EC388E2B6444C6004BA618 /* LaunchScreen.storyboard in Resources */,
 				70EC388B2B6444C5004BA618 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70ECEB272B698C4A00312D2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +525,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		70ECEB252B698C4A00312D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70ECEB482B698F2400312D2F /* FriendListInteractorMock.swift in Sources */,
+				70ECEB3E2B698DD500312D2F /* FriendListPresenterTests.swift in Sources */,
+				70ECEB3C2B698D9800312D2F /* FriendListViewControllerTests.swift in Sources */,
+				70ECEB462B698EA000312D2F /* FriendListPresenterMock.swift in Sources */,
+				70ECEB422B698E2600312D2F /* FriendListRouterTests.swift in Sources */,
+				70ECEB402B698E0600312D2F /* FriendsListInteractorTests.swift in Sources */,
+				70ECEB442B698E3D00312D2F /* FriendListBuilderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70ECEB2E2B698C4A00312D2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70EC387D2B6444C3004BA618 /* FriendsBook */;
+			targetProxy = 70ECEB2D2B698C4A00312D2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		70EC388C2B6444C6004BA618 /* LaunchScreen.storyboard */ = {
@@ -598,6 +736,45 @@
 			};
 			name = Release;
 		};
+		70ECEB2F2B698C4A00312D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5Z86D58HPL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bikmurzin.FriendsBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FriendsBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FriendsBook";
+			};
+			name = Debug;
+		};
+		70ECEB302B698C4A00312D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5Z86D58HPL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bikmurzin.FriendsBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FriendsBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FriendsBook";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +792,15 @@
 			buildConfigurations = (
 				70EC38932B6444C6004BA618 /* Debug */,
 				70EC38942B6444C6004BA618 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70ECEB312B698C4A00312D2F /* Build configuration list for PBXNativeTarget "FriendsBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70ECEB2F2B698C4A00312D2F /* Debug */,
+				70ECEB302B698C4A00312D2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -638,6 +824,22 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		70ECEB322B698CAE00312D2F /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		70ECEB352B698CC300312D2F /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -651,10 +853,25 @@
 			package = 70EC38BB2B645BAB004BA618 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		70EC38CB2B656C2A004BA618 /* SnapKit */ = {
+		70ECEB332B698CAE00312D2F /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70ECEB322B698CAE00312D2F /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		70ECEB362B698CC300312D2F /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70ECEB352B698CC300312D2F /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		70ECEB492B69966E00312D2F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		70ECEB4B2B69966E00312D2F /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
