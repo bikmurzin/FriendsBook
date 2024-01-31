@@ -64,7 +64,6 @@
 		70ECEB462B698EA000312D2F /* FriendListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */; };
 		70ECEB482B698F2400312D2F /* FriendListInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */; };
 		70ECEB4A2B69966E00312D2F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70ECEB492B69966E00312D2F /* SnapKit */; };
-		70ECEB4C2B69966E00312D2F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70ECEB4B2B69966E00312D2F /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +155,6 @@
 				70ECEB4A2B69966E00312D2F /* SnapKit in Frameworks */,
 				70EC38BF2B645BAB004BA618 /* RealmSwift in Frameworks */,
 				70EC38BD2B645BAB004BA618 /* Realm in Frameworks */,
-				70ECEB4C2B69966E00312D2F /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +452,6 @@
 				70EC38BC2B645BAB004BA618 /* Realm */,
 				70EC38BE2B645BAB004BA618 /* RealmSwift */,
 				70ECEB492B69966E00312D2F /* SnapKit */,
-				70ECEB4B2B69966E00312D2F /* SnapKit-Dynamic */,
 			);
 			productName = FriendsBook;
 			productReference = 70EC387E2B6444C3004BA618 /* FriendsBook.app */;
@@ -943,11 +940,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		70ECEB4B2B69966E00312D2F /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 70EC38CA2B656C2A004BA618 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
