@@ -76,7 +76,7 @@ extension UserDetailsViewController: DisplayUserDetails {
         interactor.openLocation()
     }
     
-    func makeCall(phone: String) {
+    func makeCall() {
         self.interactor.makeCall()
     }
     

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		708D925E2B6A0EBC00D26B9F /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D925D2B6A0EBC00D26B9F /* FriendListView.swift */; };
+		708D92602B6A12D100D26B9F /* FriendsListRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D925F2B6A12D100D26B9F /* FriendsListRouterMock.swift */; };
+		708D92622B6A172200D26B9F /* FriendListViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92612B6A172200D26B9F /* FriendListViewControllerMock.swift */; };
+		708D92662B6A1E2D00D26B9F /* DataWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92652B6A1E2D00D26B9F /* DataWorkerMock.swift */; };
+		708D926A2B6A269800D26B9F /* UserDetailsInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92692B6A269800D26B9F /* UserDetailsInteractorMock.swift */; };
+		708D926C2B6A26AC00D26B9F /* UserDetailsRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D926B2B6A26AC00D26B9F /* UserDetailsRouterMock.swift */; };
+		708D926E2B6A26BB00D26B9F /* UserDetailsPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D926D2B6A26BB00D26B9F /* UserDetailsPresenterMock.swift */; };
+		708D92702B6A26C400D26B9F /* UserDetailsViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D926F2B6A26C400D26B9F /* UserDetailsViewControllerMock.swift */; };
+		708D92722B6A26D000D26B9F /* UserDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92712B6A26D000D26B9F /* UserDetailsViewControllerTests.swift */; };
+		708D92742B6A26D800D26B9F /* UserDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92732B6A26D800D26B9F /* UserDetailsInteractorTests.swift */; };
+		708D92762B6A26E300D26B9F /* UserDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92752B6A26E300D26B9F /* UserDetailsPresenterTests.swift */; };
+		708D92782B6A26EC00D26B9F /* UserDetailsBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D92772B6A26EC00D26B9F /* UserDetailsBuilderTests.swift */; };
 		70EC38822B6444C3004BA618 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38812B6444C3004BA618 /* AppDelegate.swift */; };
 		70EC38842B6444C3004BA618 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38832B6444C3004BA618 /* SceneDelegate.swift */; };
 		70EC388B2B6444C5004BA618 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EC388A2B6444C5004BA618 /* Assets.xcassets */; };
@@ -32,7 +44,6 @@
 		70EC38C72B64ECB6004BA618 /* DataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38C62B64ECB6004BA618 /* DataWorker.swift */; };
 		70EC38D32B6646D6004BA618 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D22B6646D6004BA618 /* UserDetailsView.swift */; };
 		70EC38D52B6651D6004BA618 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */; };
-		70EC38D72B665230004BA618 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D62B665230004BA618 /* UserListView.swift */; };
 		70EC38D92B6655A6004BA618 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EC38D82B6655A6004BA618 /* UserViewModel.swift */; };
 		70ECEAF32B6818DC00312D2F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAF22B6818DC00312D2F /* UIView+Extensions.swift */; };
 		70ECEAF52B681AC000312D2F /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEAF42B681AC000312D2F /* UIStackView+Extensions.swift */; };
@@ -49,7 +60,6 @@
 		70ECEB3C2B698D9800312D2F /* FriendListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB3B2B698D9800312D2F /* FriendListViewControllerTests.swift */; };
 		70ECEB3E2B698DD500312D2F /* FriendListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB3D2B698DD500312D2F /* FriendListPresenterTests.swift */; };
 		70ECEB402B698E0600312D2F /* FriendsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB3F2B698E0600312D2F /* FriendsListInteractorTests.swift */; };
-		70ECEB422B698E2600312D2F /* FriendListRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB412B698E2600312D2F /* FriendListRouterTests.swift */; };
 		70ECEB442B698E3D00312D2F /* FriendListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB432B698E3D00312D2F /* FriendListBuilderTests.swift */; };
 		70ECEB462B698EA000312D2F /* FriendListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */; };
 		70ECEB482B698F2400312D2F /* FriendListInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */; };
@@ -81,6 +91,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		708D925D2B6A0EBC00D26B9F /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		708D925F2B6A12D100D26B9F /* FriendsListRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListRouterMock.swift; sourceTree = "<group>"; };
+		708D92612B6A172200D26B9F /* FriendListViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewControllerMock.swift; sourceTree = "<group>"; };
+		708D92652B6A1E2D00D26B9F /* DataWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorkerMock.swift; sourceTree = "<group>"; };
+		708D92692B6A269800D26B9F /* UserDetailsInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsInteractorMock.swift; sourceTree = "<group>"; };
+		708D926B2B6A26AC00D26B9F /* UserDetailsRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRouterMock.swift; sourceTree = "<group>"; };
+		708D926D2B6A26BB00D26B9F /* UserDetailsPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenterMock.swift; sourceTree = "<group>"; };
+		708D926F2B6A26C400D26B9F /* UserDetailsViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewControllerMock.swift; sourceTree = "<group>"; };
+		708D92712B6A26D000D26B9F /* UserDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		708D92732B6A26D800D26B9F /* UserDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsInteractorTests.swift; sourceTree = "<group>"; };
+		708D92752B6A26E300D26B9F /* UserDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		708D92772B6A26EC00D26B9F /* UserDetailsBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsBuilderTests.swift; sourceTree = "<group>"; };
 		70EC387E2B6444C3004BA618 /* FriendsBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70EC38812B6444C3004BA618 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70EC38832B6444C3004BA618 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +128,6 @@
 		70EC38C62B64ECB6004BA618 /* DataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWorker.swift; sourceTree = "<group>"; };
 		70EC38D22B6646D6004BA618 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		70EC38D62B665230004BA618 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		70EC38D82B6655A6004BA618 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		70ECEAF22B6818DC00312D2F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		70ECEAF42B681AC000312D2F /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
@@ -122,7 +143,6 @@
 		70ECEB3B2B698D9800312D2F /* FriendListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewControllerTests.swift; sourceTree = "<group>"; };
 		70ECEB3D2B698DD500312D2F /* FriendListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPresenterTests.swift; sourceTree = "<group>"; };
 		70ECEB3F2B698E0600312D2F /* FriendsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListInteractorTests.swift; sourceTree = "<group>"; };
-		70ECEB412B698E2600312D2F /* FriendListRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRouterTests.swift; sourceTree = "<group>"; };
 		70ECEB432B698E3D00312D2F /* FriendListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListBuilderTests.swift; sourceTree = "<group>"; };
 		70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPresenterMock.swift; sourceTree = "<group>"; };
 		70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListInteractorMock.swift; sourceTree = "<group>"; };
@@ -152,6 +172,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		708D92632B6A1E1B00D26B9F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				708D92642B6A1E2000D26B9F /* Workers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		708D92642B6A1E2000D26B9F /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				708D92652B6A1E2D00D26B9F /* DataWorkerMock.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		708D92672B6A266800D26B9F /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				708D92682B6A267000D26B9F /* Mock */,
+				708D92712B6A26D000D26B9F /* UserDetailsViewControllerTests.swift */,
+				708D92732B6A26D800D26B9F /* UserDetailsInteractorTests.swift */,
+				708D92752B6A26E300D26B9F /* UserDetailsPresenterTests.swift */,
+				708D92772B6A26EC00D26B9F /* UserDetailsBuilderTests.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		708D92682B6A267000D26B9F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				708D92692B6A269800D26B9F /* UserDetailsInteractorMock.swift */,
+				708D926B2B6A26AC00D26B9F /* UserDetailsRouterMock.swift */,
+				708D926D2B6A26BB00D26B9F /* UserDetailsPresenterMock.swift */,
+				708D926F2B6A26C400D26B9F /* UserDetailsViewControllerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		70EC38752B6444C3004BA618 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +299,7 @@
 				70EC389E2B6445C9004BA618 /* FriendsListViewController.swift */,
 				70EC389F2B6445C9004BA618 /* FriendsListModels.swift */,
 				70EC38A02B6445C9004BA618 /* FriendsListRouter.swift */,
+				708D925D2B6A0EBC00D26B9F /* FriendListView.swift */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -263,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				70EC38D42B6651D6004BA618 /* UserTableViewCell.swift */,
-				70EC38D62B665230004BA618 /* UserListView.swift */,
 				70EC38D82B6655A6004BA618 /* UserViewModel.swift */,
 			);
 			path = Views;
@@ -336,6 +395,7 @@
 		70ECEB2A2B698C4A00312D2F /* FriendsBookTests */ = {
 			isa = PBXGroup;
 			children = (
+				708D92632B6A1E1B00D26B9F /* Shared */,
 				70ECEB382B698D4900312D2F /* Modules */,
 			);
 			path = FriendsBookTests;
@@ -345,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				70ECEB392B698D5500312D2F /* FriendsList */,
+				708D92672B6A266800D26B9F /* UserDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -356,7 +417,6 @@
 				70ECEB3B2B698D9800312D2F /* FriendListViewControllerTests.swift */,
 				70ECEB3D2B698DD500312D2F /* FriendListPresenterTests.swift */,
 				70ECEB3F2B698E0600312D2F /* FriendsListInteractorTests.swift */,
-				70ECEB412B698E2600312D2F /* FriendListRouterTests.swift */,
 				70ECEB432B698E3D00312D2F /* FriendListBuilderTests.swift */,
 			);
 			path = FriendsList;
@@ -367,6 +427,8 @@
 			children = (
 				70ECEB452B698EA000312D2F /* FriendListPresenterMock.swift */,
 				70ECEB472B698F2400312D2F /* FriendListInteractorMock.swift */,
+				708D925F2B6A12D100D26B9F /* FriendsListRouterMock.swift */,
+				708D92612B6A172200D26B9F /* FriendListViewControllerMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -514,11 +576,11 @@
 				70EC38AD2B6446A5004BA618 /* UserDetailsViewController.swift in Sources */,
 				70ECEAFC2B6830F600312D2F /* ContactsCell.swift in Sources */,
 				70ECEAFE2B68310100312D2F /* LocationCell.swift in Sources */,
-				70EC38D72B665230004BA618 /* UserListView.swift in Sources */,
 				70EC38BA2B645B6A004BA618 /* DBService.swift in Sources */,
 				70EC38A12B6445C9004BA618 /* FriendsListBuilder.swift in Sources */,
 				70EC38AF2B6446AB004BA618 /* UserDetailsPresenter.swift in Sources */,
 				70ECEAF52B681AC000312D2F /* UIStackView+Extensions.swift in Sources */,
+				708D925E2B6A0EBC00D26B9F /* FriendListView.swift in Sources */,
 				70EC38D92B6655A6004BA618 /* UserViewModel.swift in Sources */,
 				70ECEB0B2B694BF800312D2F /* CLLocation+Extensions.swift in Sources */,
 				70EC38A52B6445C9004BA618 /* FriendsListModels.swift in Sources */,
@@ -529,13 +591,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708D92742B6A26D800D26B9F /* UserDetailsInteractorTests.swift in Sources */,
 				70ECEB482B698F2400312D2F /* FriendListInteractorMock.swift in Sources */,
 				70ECEB3E2B698DD500312D2F /* FriendListPresenterTests.swift in Sources */,
+				708D92722B6A26D000D26B9F /* UserDetailsViewControllerTests.swift in Sources */,
+				708D926A2B6A269800D26B9F /* UserDetailsInteractorMock.swift in Sources */,
+				708D92702B6A26C400D26B9F /* UserDetailsViewControllerMock.swift in Sources */,
 				70ECEB3C2B698D9800312D2F /* FriendListViewControllerTests.swift in Sources */,
+				708D92662B6A1E2D00D26B9F /* DataWorkerMock.swift in Sources */,
 				70ECEB462B698EA000312D2F /* FriendListPresenterMock.swift in Sources */,
-				70ECEB422B698E2600312D2F /* FriendListRouterTests.swift in Sources */,
 				70ECEB402B698E0600312D2F /* FriendsListInteractorTests.swift in Sources */,
+				708D92782B6A26EC00D26B9F /* UserDetailsBuilderTests.swift in Sources */,
+				708D92762B6A26E300D26B9F /* UserDetailsPresenterTests.swift in Sources */,
 				70ECEB442B698E3D00312D2F /* FriendListBuilderTests.swift in Sources */,
+				708D926E2B6A26BB00D26B9F /* UserDetailsPresenterMock.swift in Sources */,
+				708D926C2B6A26AC00D26B9F /* UserDetailsRouterMock.swift in Sources */,
+				708D92622B6A172200D26B9F /* FriendListViewControllerMock.swift in Sources */,
+				708D92602B6A12D100D26B9F /* FriendsListRouterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +760,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5Z86D58HPL;
+				FUSE_BUILD_SCRIPT_PHASES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FriendsBook/Sources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -699,6 +772,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LLVM_LTO = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bikmurzin.FriendsBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -716,6 +790,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5Z86D58HPL;
+				FUSE_BUILD_SCRIPT_PHASES = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FriendsBook/Sources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -727,6 +802,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LLVM_LTO = NO;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bikmurzin.FriendsBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";

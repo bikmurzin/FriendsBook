@@ -48,14 +48,14 @@ final class UserDetailsPresenter {
     
     private func stringToDate(isoDate: String) -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return dateFormatter.date(from:isoDate)!
     }
     
     private func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 3)
         dateFormatter.dateFormat = "HH:mm dd.MM.yy"
         return dateFormatter.string(from: date)
     }

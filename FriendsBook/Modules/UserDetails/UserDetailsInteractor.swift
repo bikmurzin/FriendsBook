@@ -20,12 +20,13 @@ protocol UserDetailsBusinessLogic: AnyObject {
 
 final class UserDetailsInteractor {
     private let presenter: UserDetailsPresentationLogic
-    private let dataWorker = DataWorker()
+    private let dataWorker: IDataWorker
     private var userFriends: [UserModel] = []
     private var currentUser: UserModel?
     
-    init(presenter: UserDetailsPresentationLogic) {
+    init(presenter: UserDetailsPresentationLogic, dataWorker: IDataWorker) {
         self.presenter = presenter
+        self.dataWorker = dataWorker
     }
     
     private func getUserFriends(users: [UserModel], userId: Int) -> [UserModel] {

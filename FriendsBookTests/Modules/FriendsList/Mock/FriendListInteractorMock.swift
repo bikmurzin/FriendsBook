@@ -8,17 +8,21 @@
 @testable import FriendsBook
 
 final class FriendListInteractorMock: FriendsListBusinessLogic {
-    func loadData(request: FriendsBook.FriendsListModels.Request) {
-        
+    
+    private(set) var loadDataWasCalled = 0
+    func loadData() {
+        loadDataWasCalled += 1
     }
     
-    func refreshData(request: FriendsBook.FriendsListModels.Request) {
-        
+    private(set) var refreshDataWasCalled = 0
+    func refreshData() {
+        refreshDataWasCalled += 1
     }
     
+    private(set) var loadNextScreenDataWasCalled = 0
+    private(set) var receivedLoadNextScreenDataRequest: FriendsListNextScreenModels.Request!
     func loadNextScreenData(request: FriendsBook.FriendsListNextScreenModels.Request) {
-        
+        loadNextScreenDataWasCalled += 1
+        receivedLoadNextScreenDataRequest = request
     }
-    
-    
 }

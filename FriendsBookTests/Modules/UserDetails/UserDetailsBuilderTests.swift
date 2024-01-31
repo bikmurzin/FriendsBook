@@ -1,6 +1,6 @@
 //
 //  Project: FriendsBook
-//  File: FriendListBuilderTests.swift
+//  File: UserDetailsBuilderTests.swift
 //  Created by: Robert Bikmurzin
 //  Date: 31.01.2024
 //
@@ -10,24 +10,30 @@ import Nimble
 import UIKit
 @testable import FriendsBook
 
-final class FriendListBuilderTests: QuickSpec {
+final class UserDetailsBuilderTests: QuickSpec {
     override class func spec() {
-        var friendListBuilder: FriendsListBuilder!
+        var userDetailsBuilder: UserDetailsBuilder!
         var result: UIViewController!
         
         beforeEach {
-            friendListBuilder = FriendsListBuilder()
+            userDetailsBuilder = UserDetailsBuilder()
             result = UIViewController()
         }
         
         describe(".build") {
             it("should return a valid UIViewController") {
                 // when
-                result = friendListBuilder.build()
+                result = userDetailsBuilder.build(userId: Constants.userId)
                 
                 // then
-                expect(result).to(beAKindOf(FriendsListViewController.self))
+                expect(result).to(beAKindOf(UserDetailsViewController.self))
             }
         }
+    }
+}
+
+extension UserDetailsBuilderTests {
+    enum Constants {
+        static let userId = 1
     }
 }

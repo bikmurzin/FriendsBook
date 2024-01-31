@@ -15,13 +15,14 @@ protocol FriendsListBusinessLogic: AnyObject {
 
 final class FriendsListInteractor {
     private let presenter: FriendsListPresentationLogic
-    private let dataWorker = DataWorker()
+    private let dataWorker: IDataWorker
     private var userModels: [UserModel] = []
     private let group = DispatchGroup()
     private let queue = DispatchQueue(label: "friendsListInteractorQueue")
     
-    init(presenter: FriendsListPresentationLogic) {
+    init(presenter: FriendsListPresentationLogic, dataWorker: IDataWorker) {
         self.presenter = presenter
+        self.dataWorker = dataWorker
     }
     
     private func getUserFriends(userId: Int) -> [UserModel] {
@@ -37,6 +38,7 @@ final class FriendsListInteractor {
     
     private func isUserActive(userId: Int) -> Bool {
         let users = userModels.filter({ $0.id == userId })
+        guard users.count > 0 else { return false }
         return users[0].isActive
     }
 }

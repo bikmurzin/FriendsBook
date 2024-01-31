@@ -14,7 +14,8 @@ protocol FriendsListBuildLogic: AnyObject {
 final class FriendsListBuilder: FriendsListBuildLogic {
     func build(userId: Int? = nil) -> UIViewController {
         let presenter = FriendsListPresenter()
-        let interactor = FriendsListInteractor(presenter: presenter)
+        let dataWorker = DataWorker()
+        let interactor = FriendsListInteractor(presenter: presenter, dataWorker: dataWorker)
         let router = FriendsListRouter()
         let viewController = FriendsListViewController(interactor: interactor, router: router)
         router.viewController = viewController
