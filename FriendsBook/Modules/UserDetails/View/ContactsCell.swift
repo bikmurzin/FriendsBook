@@ -80,13 +80,11 @@ final class ContactsCell: UITableViewCell {
     
     @objc
     private func emailButtonTapped() {
-        print("emailButtonTapped")
         delegate?.emailButtonDidTap()
     }
     
     @objc
     private func phoneButtonTapped() {
-        print("phoneButtonTapped")
         delegate?.phoneButtonDidTap(phone: phoneButton.titleLabel?.text ?? "")
     }
 }

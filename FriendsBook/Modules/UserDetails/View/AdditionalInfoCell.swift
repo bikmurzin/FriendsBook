@@ -85,7 +85,7 @@ extension AdditionalInfoCell {
         static let favoriteFruitText: String = "Favorite Fruit"
         static let topPadding: CGFloat = 20
         static let horizontalPadding: CGFloat = 20
-        static let eyeColorViewSize: CGFloat = 15
+        static let eyeColorViewSize: CGFloat = 20
         static let favoriteFruitImageViewSize: CGFloat = 25
         static let labelsTextColor: UIColor = .secondaryLabel
         static let labelsTextSize: CGFloat = 15

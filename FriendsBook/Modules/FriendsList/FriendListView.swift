@@ -1,20 +1,20 @@
 //
 //  Project: FriendsBook
-//  File: UserListView.swift
+//  File: FriendListView.swift
 //  Created by: Robert Bikmurzin
-//  Date: 28.01.2024
+//  Date: 31.01.2024
 //
 
 import UIKit
 import SnapKit
 
-protocol DisplayUserList: AnyObject {
+protocol DisplayFriendList: AnyObject {
     func refreshData()
     func didSelectUser(userId: Int)
 }
 
-final class UserListView: UIView {
-    weak var delegate: DisplayUserList?
+final class FriendListView: UIView {
+    weak var delegate: DisplayFriendList?
     
     private var users: [UserViewModel.User] = []
     
@@ -41,7 +41,7 @@ final class UserListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUsersList(users: [UserViewModel.User]) {
+    func updateFriendList(users: [UserViewModel.User]) {
         self.users = users
         tableView.reloadData()
     }
@@ -76,7 +76,7 @@ final class UserListView: UIView {
 }
 
 // MARK: - UITableViewDelegate
-extension UserListView: UITableViewDelegate {
+extension FriendListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         Constants.heightForCell
     }
@@ -88,7 +88,7 @@ extension UserListView: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension UserListView: UITableViewDataSource {
+extension FriendListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         users.count
     }
@@ -104,7 +104,7 @@ extension UserListView: UITableViewDataSource {
 }
 
 // MARK: - Constants
-extension UserListView {
+extension FriendListView {
     enum Constants {
         static let tableViewBackgroundColor: UIColor = .clear
         static let viewBackgroundColor: UIColor = .white

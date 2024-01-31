@@ -79,8 +79,8 @@ extension UserDetailsPresenter: UserDetailsPresentationLogic {
 // MARK: - Constants
 extension UserDetailsPresenter {
     enum Constants {
-        static let greenColor: UIColor = .green
-        static let brownColor: UIColor = .brown
-        static let blueColor: UIColor = .blue
+        static let greenColor: UIColor = UIColor(red: 25/255.0, green: 163/255.0, blue: 55/255.0, alpha: 1)
+        static let brownColor: UIColor = UIColor(red: 94/255.0, green: 72/255.0, blue: 30/255.0, alpha: 1)
+        static let blueColor: UIColor = UIColor(red: 67/255.0, green: 101/255.0, blue: 128/255.0, alpha: 1)
     }
 }

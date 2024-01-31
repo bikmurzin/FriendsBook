@@ -176,12 +176,10 @@ extension UserDetailsView: UITableViewDataSource {
 // MARK: - IContactsCellHandler
 extension UserDetailsView: IContactsCellHandler {
     func emailButtonDidTap() {
-        print("emailButtonDidTap")
         delegate?.writeEmail()
     }
     
     func phoneButtonDidTap(phone: String) {
-        print("phoneButtonDidTap")
         delegate?.makeCall(phone: phone)
     }
 }

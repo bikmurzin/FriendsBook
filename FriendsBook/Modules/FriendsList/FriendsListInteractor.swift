@@ -8,8 +8,8 @@
 import Foundation
 
 protocol FriendsListBusinessLogic: AnyObject {
-    func loadData(request: FriendsListModels.Request)
-    func refreshData(request: FriendsListModels.Request)
+    func loadData()
+    func refreshData()
     func loadNextScreenData(request: FriendsListNextScreenModels.Request)
 }
 
@@ -42,33 +42,25 @@ final class FriendsListInteractor {
 }
 
 extension FriendsListInteractor: FriendsListBusinessLogic {
-    func loadData(request: FriendsListModels.Request) {
+    func loadData() {
         group.enter()
         queue.async {
             self.userModels = self.dataWorker.loadUserDataAndUpdateIfNeeded()
             self.group.leave()
         }
         group.notify(queue: .main) {
-            if let userId = request.userId {
-                self.presenter.presentData(response: FriendsListModels.Response(users: self.getUserFriends(userId: userId)))
-            } else {
-                self.presenter.presentData(response: FriendsListModels.Response(users: self.userModels))
-            }
+            self.presenter.presentData(response: FriendsListModels.Response(users: self.userModels))
         }
     }
     
-    func refreshData(request: FriendsListModels.Request) {
+    func refreshData() {
         group.enter()
         queue.async {
             self.userModels = self.dataWorker.loadAndUpdateUserData()
             self.group.leave()
         }
         group.notify(queue: .main) {
-            if let userId = request.userId {
-                self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.getUserFriends(userId: userId)))
-            } else {
-                self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.userModels))
-            }
+            self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.userModels))
         }
     }
     

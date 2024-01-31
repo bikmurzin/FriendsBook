@@ -15,15 +15,13 @@ protocol FriendsListDisplayLogic: AnyObject {
 
 final class FriendsListViewController: UIViewController {
     
-    private let userId: Int?
     private let interactor: FriendsListBusinessLogic
     private let router: FriendsListRoutingLogic
-    private let userListView = UserListView()
+    private let userListView = FriendListView()
     
-    init(interactor: FriendsListBusinessLogic, router: FriendsListRoutingLogic, userId: Int?) {
+    init(interactor: FriendsListBusinessLogic, router: FriendsListRoutingLogic) {
         self.interactor = interactor
         self.router = router
-        self.userId = userId
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,20 +36,18 @@ final class FriendsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = Constants.navigationTitle
-        navigationController?.navigationBar.prefersLargeTitles = true
-        interactor.loadData(request: FriendsListModels.Request(userId: userId))
+        interactor.loadData()
     }
 }
 
 // MARK: - FriendsListDisplayLogic
 extension FriendsListViewController: FriendsListDisplayLogic {
     func displayData(viewModel: FriendsListModels.ViewModel) {
-        userListView.updateUsersList(users: viewModel.users)
+        userListView.updateFriendList(users: viewModel.users)
     }
     
     func displayRefreshedData(viewModel: FriendsListModels.ViewModel) {
-        userListView.updateUsersList(users: viewModel.users)
+        userListView.updateFriendList(users: viewModel.users)
         userListView.endRefreshing()
     }
     
@@ -61,19 +57,12 @@ extension FriendsListViewController: FriendsListDisplayLogic {
 }
 
 // MARK: - DisplayFriendList
-extension FriendsListViewController: DisplayUserList {
+extension FriendsListViewController: DisplayFriendList {
     func didSelectUser(userId: Int) {
         interactor.loadNextScreenData(request: userId)
     }
     
     func refreshData() {
-        interactor.refreshData(request: FriendsListModels.Request(userId: userId))
-    }
-}
-
-// MARK: - Constants
-extension FriendsListViewController {
-    enum Constants {
-        static let navigationTitle = "User List"
+        interactor.refreshData()
     }
 }

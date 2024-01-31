@@ -16,7 +16,7 @@ final class FriendsListBuilder: FriendsListBuildLogic {
         let presenter = FriendsListPresenter()
         let interactor = FriendsListInteractor(presenter: presenter)
         let router = FriendsListRouter()
-        let viewController = FriendsListViewController(interactor: interactor, router: router, userId: userId)
+        let viewController = FriendsListViewController(interactor: interactor, router: router)
         router.viewController = viewController
 
         presenter.viewController = viewController
