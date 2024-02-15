@@ -21,9 +21,9 @@ final class FriendsListRouter {
 
 extension FriendsListRouter: FriendsListRoutingLogic {
     func routeToUserDetailsViewController(userId: Int) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             let detailsUserViewController = UserDetailsBuilder().build(userId: userId)
-            guard let viewController = self.viewController else { return }
+            guard let viewController = self?.viewController else { return }
             viewController.navigationController?.pushViewController(detailsUserViewController, animated: true)
         }
     }

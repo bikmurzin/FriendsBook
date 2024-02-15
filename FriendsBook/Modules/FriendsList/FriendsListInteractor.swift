@@ -46,23 +46,23 @@ final class FriendsListInteractor {
 extension FriendsListInteractor: FriendsListBusinessLogic {
     func loadData() {
         group.enter()
-        queue.async {
-            self.userModels = self.dataWorker.loadUserDataAndUpdateIfNeeded()
-            self.group.leave()
+        queue.async { [weak self] in
+            self?.userModels = self?.dataWorker.loadUserDataAndUpdateIfNeeded() ?? []
+            self?.group.leave()
         }
-        group.notify(queue: .main) {
-            self.presenter.presentData(response: FriendsListModels.Response(users: self.userModels))
+        group.notify(queue: .main) { [weak self] in
+            self?.presenter.presentData(response: FriendsListModels.Response(users: self?.userModels ?? []))
         }
     }
     
     func refreshData() {
         group.enter()
-        queue.async {
-            self.userModels = self.dataWorker.loadAndUpdateUserData()
-            self.group.leave()
+        queue.async { [weak self] in
+            self?.userModels = self?.dataWorker.loadAndUpdateUserData() ?? []
+            self?.group.leave()
         }
-        group.notify(queue: .main) {
-            self.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self.userModels))
+        group.notify(queue: .main) { [weak self] in
+            self?.presenter.presentRefreshedData(response: FriendsListModels.Response(users: self?.userModels ?? []))
         }
     }
     

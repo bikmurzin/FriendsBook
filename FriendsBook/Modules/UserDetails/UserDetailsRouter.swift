@@ -21,9 +21,9 @@ final class UserDetailsRouter {
 
 extension UserDetailsRouter: UserDetailsRoutingLogic {
     func routeToNextUserDetailsViewController(userId: Int) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             let nextUserDetailsViewController = UserDetailsBuilder().build(userId: userId)
-            guard let viewController = self.viewController else { return }
+            guard let viewController = self?.viewController else { return }
             viewController.navigationController?.pushViewController(nextUserDetailsViewController, animated: true)
         }
     }

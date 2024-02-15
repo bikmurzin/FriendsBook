@@ -30,7 +30,10 @@ final class FriendListInteractorTests: QuickSpec {
                 interactor.loadData()
                 
                 // then
-                expect(dataWorkerMock.loadUserDataAndUpdateIfNeededWasCalled).to(equal(1))
+                waitUntil(timeout: NimbleTimeInterval.seconds(1)) { done in
+                    expect(dataWorkerMock.loadUserDataAndUpdateIfNeededWasCalled).to(equal(1))
+                    done()
+                }
             }
             
             it("should call presentData in presenter") {

@@ -99,18 +99,11 @@ extension UserDetailsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch dataSource[indexPath.section] {
-        case .info:
-            break
-        case .about:
-            break
-        case .contacts:
-            break
         case .location:
             delegate?.openLocation()
-        case .additionalInfo:
-            break
         case .friends:
             delegate?.didSelectFriend(friendId: indexPath.row)
+        default: break
         }
     }
 }
@@ -123,12 +116,8 @@ extension UserDetailsView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch dataSource[section] {
-        case .info: return 1
-        case .about: return 1
-        case .contacts: return 1
-        case .location: return 1
-        case .additionalInfo: return 1
         case .friends(let friends): return friends?.count ?? 0
+        default: return 1
         }
     }
     

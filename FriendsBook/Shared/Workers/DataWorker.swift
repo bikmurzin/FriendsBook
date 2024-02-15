@@ -20,16 +20,16 @@ final class DataWorker {
     private func loadDataFromAPI() -> [UserModel] {
         var loadedUserModels: [UserModel] = []
         group.enter()
-        NetworkService.makeRequest(urlString: Constants.urlString) { (result: Result<[UserModel], NetworkError>) in
+        NetworkService.makeRequest(urlString: Constants.urlString) { [weak self] (result: Result<[UserModel], NetworkError>) in
             switch result {
             case .success(let userModels):
                 DataBaseService.deleteDataFromDB()
                 DataBaseService.saveDataToDB(models: userModels)
                 loadedUserModels = userModels
-                self.group.leave()
+                self?.group.leave()
             case .failure(let error):
                 print(error)
-                self.group.leave()
+                self?.group.leave()
             }
         }
         group.wait()
